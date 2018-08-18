@@ -2,9 +2,6 @@
   "name": "nofuzz",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "engines": {
-    "node": "10.6.0"
-  },
   "author": "emilundg <lundgrenemil@hotmail.com>",
   "scripts": {
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
