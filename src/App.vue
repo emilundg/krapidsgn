@@ -96,7 +96,7 @@
   import Firebase from 'firebase/app'
   import 'firebase/firestore'
   import DotLoader from 'vue-spinner/src/DotLoader.vue'
-  import LineChart from './Linechart.js'
+  import LineChart from './LineChart.js'
   import Moment from 'moment'
   import Datepicker from 'vuejs-datepicker';
 
