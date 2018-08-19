@@ -266,6 +266,7 @@
   }
 
   .table {
+    text-align: left;
     td {
       border: none;
     }
