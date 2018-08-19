@@ -149,13 +149,13 @@
     },
     methods: {
       customFormatter(date) {
-        return Moment(date).format('h:mm DD MMMM YYYY a');
+        return Moment(date).format('h:mm a DD MMMM YYYY');
       },
       doShiet() {
         var chartData = []
         this.incidents.forEach(function(el) {
           var obj = {};
-          obj.t = Moment.unix(el.date.seconds).format("h:mm DD MMMM YYYY a");
+          obj.t = Moment.unix(el.date.seconds).format("h:mm a DD MMMM YYYY");
           obj.y = el.intensity;
           obj.situation = el.situation;
           obj.result = el.result;
