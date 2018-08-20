@@ -80,7 +80,14 @@
               <label for="comment">Consequence:</label>
               <b-form-input v-model="consequence" type="text" placeholder="Enter consequence" required></b-form-input>
             </div>
+
+            <div class="inputfield">
+              <label for="comment">Outcome:</label>
+              <b-form-select v-model="selected" :options="options" class="mb-3" required/>
+            </div>
           </div>
+
+
           <button type="submit" class="submit">
                                   Submit
                                 </button>
@@ -118,6 +125,12 @@
     },
     data() {
       return {
+        selected: null,
+        options: [
+          { value: null, text: 'Please select an option' },
+          { value: true, text: 'Positive' },
+          { value: false, text: 'Negative' },
+        ],
         color: "rgba(33, 147, 245, 0.5)",
         errors: [],
         loading: false,
@@ -153,6 +166,7 @@
       },
       doShiet() {
         var chartData = []
+        var pointBg = []
         this.incidents.forEach(function(el) {
           var obj = {};
           obj.t = Moment.unix(el.date.seconds).format("h:mm a DD MMMM YYYY");
@@ -160,6 +174,12 @@
           obj.situation = el.situation;
           obj.result = el.result;
           obj.consequence = el.consequence;
+
+          if (el.pos) {
+            pointBg.push('rgba(45, 245, 107, 0.8)')
+          } else if (!el.pos) {
+            pointBg.push('rgba(245, 45, 83, 0.8)')
+          }
           chartData.push(obj);
         })
 
@@ -171,11 +191,13 @@
           datasets: [{
             radius: 6,
             cubicInterpolationMode: 'monotone',
+            pointBackgroundColor: pointBg,
             backgroundColor: 'rgba(45,183,245, 0.2)',
             borderColor: 'rgba(45,183,245, 0.8)',
-            label: 'Intensity',
+            label: 'All',
             data: chartData
-          }]
+          }
+         ]
         }
         this.chartData = data;
       },
@@ -191,6 +213,7 @@
             situation: this.situation,
             result: this.result,
             consequence: this.consequence,
+            pos: this.selected
           })
           .then(function() {
             window
