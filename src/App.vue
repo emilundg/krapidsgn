@@ -176,9 +176,9 @@
           obj.consequence = el.consequence;
 
           if (el.pos) {
-            pointBg.push('rgba(45, 245, 107, 0.8)')
+            pointBg.push('rgba(45, 245, 107, 0.7)')
           } else if (!el.pos) {
-            pointBg.push('rgba(245, 45, 83, 0.8)')
+            pointBg.push('rgba(245, 45, 83, 0.7)')
           }
           chartData.push(obj);
         })
@@ -190,7 +190,7 @@
           labels: [first, last],
           datasets: [{
             radius: 6,
-            cubicInterpolationMode: 'monotone',
+           cubicInterpolationMode: 'monotone',
             pointBackgroundColor: pointBg,
             backgroundColor: 'rgba(45,183,245, 0.2)',
             borderColor: 'rgba(45,183,245, 0.8)',
