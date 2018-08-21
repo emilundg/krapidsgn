@@ -17,31 +17,36 @@
         <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-6 mb-4">
           <h2>Incidents</h2>
           <line-chart :chartData="chartData"></line-chart>
-          <div class="row" style="margin-top: 30px;">
-            <div class="col-4" style="margin: 0 auto">
-            <div class="outcomes pos">
-              <p class="header">Pos:</p>
-              <p class="content"> {{ posOut }} </p>
-            </div>
-             <div class="outcomes neg">
-              <p class="header">Neg:</p>
-              <p class="content"> {{ negOut }} </p>
-            </div>
-            </div>
-          </div>
         </b-card>
 
         <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-4 mb-4" id="data" style="">
           <h2>Data</h2>
+           <div class="row" style="margin-top: 30px; justify-content: center;">
+              <div class="col-2 outcomes neu">
+                <p class="header">Total:</p>
+                <p class="content"> {{ posOut + negOut }} </p>
+              <div class="bord"></div>
+              </div>
+              <div class="col-2 outcomes pos">
+                <p class="header">Pos:</p>
+                <p class="content"> {{ posOut }} </p>
+                <div class="bord"></div>
+              </div>
+              <div class="col-2 outcomes neg">
+                <p class="header">Neg:</p>
+                <p class="content"> {{ negOut }} </p>
+                <div class="bord"></div>
+              </div>
+            </div>
           <table class="table">
             <tbody>
               <tr>
-                <td><b>Intensity:</b></td>
-                <td id="intensityData">-</td>
-              </tr>
-              <tr>
                 <td><b>Date:</b></td>
                 <td id="dateData">-</td>
+              </tr>
+              <tr>
+                <td><b>Intensity:</b></td>
+                <td id="intensityData">-</td>
               </tr>
               <tr>
                 <td><b>Situation:</b></td>
@@ -195,10 +200,10 @@
           obj.consequence = el.consequence;
 
           if (el.pos) {
-            pointBg.push('rgba(45, 245, 107, 0.7)')
+            pointBg.push('rgba(45, 245, 107, 0.6)')
             self.posOut+=1
           } else if (!el.pos) {
-            pointBg.push('rgba(245, 45, 83, 0.7)')
+            pointBg.push('rgba(245, 45, 83, 0.6)')
             self.negOut+=1
           }
           chartData.push(obj);
@@ -213,8 +218,8 @@
             radius: 6,
            cubicInterpolationMode: 'monotone',
             pointBackgroundColor: pointBg,
-            backgroundColor: 'rgba(45,183,245, 0.2)',
-            borderColor: 'rgba(45,183,245, 0.8)',
+            backgroundColor: 'rgba(45,183,245, 0.15)',
+            borderColor: 'rgba(45,183,245, 0.56)',
             label: 'All',
             data: chartData
           }
@@ -299,8 +304,9 @@
     border: none;
     border-radius: 0px;
     margin: 4vh;
+    padding: 0px;
     width: 85vw;
-    min-height: 75vh;
+    min-height: 80vh;
     box-shadow: 0 3px 8px 0 rgba(68, 45, 45, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
     h2 {
       margin-bottom: 20px;
@@ -327,20 +333,40 @@
   }
 
 .outcomes {
-  margin: 0 auto;
   font-weight:400;
+  margin-bottom: 30px;
+  .bord {
+    margin: 0 auto;
+    max-width: 60px;
+    border: 2px solid transparent;
+  }
+  &.neu {
+    &:hover {
+      p {
+        color: rgba(45,183,245, 0.8);
+      }
+      .bord {
+        border: 1.5px solid rgba(45,183,245, 0.8);
+      }
+    }
+  }
   &.neg {
     &:hover {
       p {
         color: rgba(245, 45, 83, 0.7);
       }
+      .bord {
+        border: 1.5px solid rgba(245, 45, 83, 0.7);
+      }
     }
   }
   &.pos{
-    float: left;
     &:hover {
       p {
         color: rgba(38, 207, 91, 0.7);
+      }
+      .bord {
+        border: 1.5px solid rgba(38, 207, 91, 0.7);
       }
     }
   }
@@ -351,7 +377,8 @@
   }
   .content {
     font-size: 18px;
-    color: rgba(0,0,0,0.87)
+    color: rgba(0,0,0,0.87);
+    margin-bottom: 6px;
   }
 }
 </style>
