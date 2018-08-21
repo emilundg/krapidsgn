@@ -22,17 +22,17 @@
         <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-4 mb-4" id="data" style="">
           <h2>Data</h2>
            <div class="row" style="margin-top: 30px; justify-content: center;">
-              <div class="col-2 outcomes neu">
+              <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neu">
                 <p class="header">Total:</p>
                 <p class="content"> {{ posOut + negOut }} </p>
               <div class="bord"></div>
               </div>
-              <div class="col-2 outcomes pos">
+              <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes pos">
                 <p class="header">Pos:</p>
                 <p class="content"> {{ posOut }} </p>
                 <div class="bord"></div>
               </div>
-              <div class="col-2 outcomes neg">
+              <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neg">
                 <p class="header">Neg:</p>
                 <p class="content"> {{ negOut }} </p>
                 <div class="bord"></div>
@@ -200,7 +200,7 @@
           obj.consequence = el.consequence;
 
           if (el.pos) {
-            pointBg.push('rgba(45, 245, 107, 0.6)')
+            pointBg.push('rgba(38, 207, 91, 0.6)')
             self.posOut+=1
           } else if (!el.pos) {
             pointBg.push('rgba(245, 45, 83, 0.6)')
