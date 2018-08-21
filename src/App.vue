@@ -13,42 +13,56 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-      <b-card v-if="tab === 2" tag="article" class="mb-5">
-        <h2>Incidents</h2>
-        <line-chart :chartData="chartData"></line-chart>
-      </b-card>
+      <div class="row" style="justify-content: center;">
+        <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-6 mb-4">
+          <h2>Incidents</h2>
+          <line-chart :chartData="chartData"></line-chart>
+          <div class="row" style="margin-top: 30px;">
+            <div class="col-4" style="margin: 0 auto">
+            <div class="outcomes pos">
+              <p class="header">Pos:</p>
+              <p class="content"> {{ posOut }} </p>
+            </div>
+             <div class="outcomes neg">
+              <p class="header">Neg:</p>
+              <p class="content"> {{ negOut }} </p>
+            </div>
+            </div>
+          </div>
+        </b-card>
 
-      <b-card v-if="tab === 2" tag="article" class="mb-5" id="data" style="display: none; justify-content: center;">
-        <h2>Data</h2>
-        <table class="table">
-          <tbody>
+        <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-4 mb-4" id="data" style="">
+          <h2>Data</h2>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><b>Intensity:</b></td>
+                <td id="intensityData">-</td>
+              </tr>
+              <tr>
+                <td><b>Date:</b></td>
+                <td id="dateData">-</td>
+              </tr>
+              <tr>
+                <td><b>Situation:</b></td>
+                <td id="situationData">-</td>
+              </tr>
             <tr>
-              <td><b>Intensity:</b></td>
-              <td id="intensityData"></td>
-            </tr>
-            <tr>
-              <td><b>Date:</b></td>
-              <td id="dateData"></td>
-            </tr>
-            <tr>
-              <td><b>Situation:</b></td>
-              <td id="situationData"></td>
-            </tr>
-           <tr>
-              <td><b>Result:</b></td>
-              <td id="resultData"></td>
-            </tr>
-            <tr>
-              <td><b>Consequence:</b></td>
-              <td id="consequenceData"></td>
-            </tr>
-          </tbody>
-        </table>
-      </b-card>
+                <td><b>Result:</b></td>
+                <td id="resultData">-</td>
+              </tr>
+              <tr>
+                <td><b>Consequence:</b></td>
+                <td id="consequenceData">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </b-card>
+      </div>
     </div>
 
     <b-container class="container-fluid" v-if="tab === 1" fluid>
-      <b-card v-if="tab === 1" tag="article" class="mb-5">
+      <b-card v-if="tab === 1" tag="article" class="mb-5" style="margin: 30px auto;">
         <h2>Add Incident</h2>
         <b-form id="app" class="row" @submit="onSubmit">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -137,6 +151,8 @@
         sliding: null,
         incidents: [],
         chartData: [],
+        posOut: 0,
+        negOut: 0,
         tab: 1,
         date: '',
         intensity: '',
@@ -167,6 +183,9 @@
       doShiet() {
         var chartData = []
         var pointBg = []
+        var self = this
+        self.posOut = 0
+        self.negOut = 0
         this.incidents.forEach(function(el) {
           var obj = {};
           obj.t = Moment.unix(el.date.seconds).format("h:mm a DD MMMM YYYY");
@@ -177,8 +196,10 @@
 
           if (el.pos) {
             pointBg.push('rgba(45, 245, 107, 0.7)')
+            self.posOut+=1
           } else if (!el.pos) {
             pointBg.push('rgba(245, 45, 83, 0.7)')
+            self.negOut+=1
           }
           chartData.push(obj);
         })
@@ -277,10 +298,13 @@
   .card {
     border: none;
     border-radius: 0px;
-    margin: 5vh;
-    box-shadow: 0 3px 8px 0 rgba(68, 45, 45, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    margin: 4vh;
     width: 85vw;
-    margin: 30px auto;
+    min-height: 75vh;
+    box-shadow: 0 3px 8px 0 rgba(68, 45, 45, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    h2 {
+      margin-bottom: 20px;
+    }
   }
 
   h1,
@@ -291,6 +315,7 @@
   .table {
     text-align: left;
     td {
+      padding: 7px;
       border: none;
     }
   }
@@ -300,4 +325,33 @@
     text-align: left;
     margin-bottom: 30px;
   }
+
+.outcomes {
+  margin: 0 auto;
+  font-weight:400;
+  &.neg {
+    &:hover {
+      p {
+        color: rgba(245, 45, 83, 0.7);
+      }
+    }
+  }
+  &.pos{
+    float: left;
+    &:hover {
+      p {
+        color: rgba(38, 207, 91, 0.7);
+      }
+    }
+  }
+  .header {
+    color: rgba(0, 0, 0, 0.56);
+    margin: 0px;
+    font-size: 14px;
+  }
+  .content {
+    font-size: 18px;
+    color: rgba(0,0,0,0.87)
+  }
+}
 </style>
