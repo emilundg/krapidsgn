@@ -23,7 +23,6 @@ export default {
                             var currentDataSet = data.datasets[dataIndex];
                             var label = currentDataSet.label || '';
 
-
                             if (label) {
                                 label += ': ';
                             }

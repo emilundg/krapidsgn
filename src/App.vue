@@ -183,7 +183,7 @@
     },
     methods: {
       customFormatter(date) {
-        return Moment(date).format('h:mm a DD MMMM YYYY');
+        return Moment(date).format('H:mm DD MMMM YYYY');
       },
       doShiet() {
         var chartData = []
