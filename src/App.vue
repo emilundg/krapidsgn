@@ -193,7 +193,7 @@
         self.negOut = 0
         this.incidents.forEach(function(el) {
           var obj = {};
-          obj.t = Moment.unix(el.date.seconds).format("h:mm a DD MMMM YYYY");
+          obj.t = Moment(new Date(el.date.seconds * 1000),"H:mm DD MMMM YYYY")
           obj.y = el.intensity;
           obj.situation = el.situation;
           obj.result = el.result;

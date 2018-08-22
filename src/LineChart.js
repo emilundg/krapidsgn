@@ -31,9 +31,6 @@ export default {
 
                             var currentObject = currentDataSet.data[tooltipItem.index]
 
-                            var dataDiv = document.getElementById("data");
-                            dataDiv.style.display = "flex";
-
                             document.getElementById("intensityData").innerHTML = currentObject.y;
                             document.getElementById("dateData").innerHTML = currentObject.t;
                             document.getElementById("situationData").innerHTML = currentObject.situation;
@@ -56,7 +53,10 @@ export default {
                     xAxes: [{
                         type: 'time',
                         time: {
-                            displayFormats: {}
+                            unit: 'day',
+                            displayFormats: {
+                                'day': 'MMM DD'
+                            }
                         }
                     }]
                 }
