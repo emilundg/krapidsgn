@@ -21,23 +21,23 @@
 
         <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-4 mb-4" id="data" style="">
           <h2>Data</h2>
-           <div class="row" style="margin-top: 30px; justify-content: center;">
-              <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neu">
-                <p class="header">Total:</p>
-                <p class="content"> {{ posOut + negOut }} </p>
+          <div class="row" style="margin-top: 30px; justify-content: center;">
+            <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neu">
+              <p class="header">Total:</p>
+              <p class="content"> {{ posOut + negOut }} </p>
               <div class="bord"></div>
-              </div>
-              <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes pos">
-                <p class="header">Pos:</p>
-                <p class="content"> {{ posOut }} </p>
-                <div class="bord"></div>
-              </div>
-              <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neg">
-                <p class="header">Neg:</p>
-                <p class="content"> {{ negOut }} </p>
-                <div class="bord"></div>
-              </div>
             </div>
+            <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes pos">
+              <p class="header">Pos:</p>
+              <p class="content"> {{ posOut }} </p>
+              <div class="bord"></div>
+            </div>
+            <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neg">
+              <p class="header">Neg:</p>
+              <p class="content"> {{ negOut }} </p>
+              <div class="bord"></div>
+            </div>
+          </div>
           <table class="table">
             <tbody>
               <tr>
@@ -52,7 +52,7 @@
                 <td><b>Situation:</b></td>
                 <td id="situationData">-</td>
               </tr>
-            <tr>
+              <tr>
                 <td><b>Result:</b></td>
                 <td id="resultData">-</td>
               </tr>
@@ -108,8 +108,8 @@
 
 
           <button type="submit" class="submit">
-                                  Submit
-                                </button>
+                                    Submit
+                                  </button>
 
         </b-form>
       </b-card>
@@ -145,10 +145,18 @@
     data() {
       return {
         selected: null,
-        options: [
-          { value: null, text: 'Please select an option' },
-          { value: true, text: 'Positive' },
-          { value: false, text: 'Negative' },
+        options: [{
+            value: null,
+            text: 'Please select an option'
+          },
+          {
+            value: true,
+            text: 'Positive'
+          },
+          {
+            value: false,
+            text: 'Negative'
+          },
         ],
         color: "rgba(33, 147, 245, 0.5)",
         errors: [],
@@ -193,7 +201,7 @@
         self.negOut = 0
         this.incidents.forEach(function(el) {
           var obj = {};
-          obj.t = Moment(new Date(el.date.seconds * 1000),"H:mm DD MMMM YYYY")
+          obj.t = Moment(new Date(el.date.seconds * 1000), "H:mm DD MMMM YYYY")
           obj.y = el.intensity;
           obj.situation = el.situation;
           obj.result = el.result;
@@ -201,10 +209,10 @@
 
           if (el.pos) {
             pointBg.push('rgba(38, 207, 91, 0.6)')
-            self.posOut+=1
+            self.posOut += 1
           } else if (!el.pos) {
             pointBg.push('rgba(245, 45, 83, 0.6)')
-            self.negOut+=1
+            self.negOut += 1
           }
           chartData.push(obj);
         })
@@ -215,15 +223,14 @@
         var data = {
           labels: [first, last],
           datasets: [{
-            radius: 6,
-           cubicInterpolationMode: 'monotone',
+            radius: 7,
+            cubicInterpolationMode: 'monotone',
             pointBackgroundColor: pointBg,
             backgroundColor: 'rgba(45,183,245, 0.15)',
             borderColor: 'rgba(45,183,245, 0.56)',
             label: 'All',
             data: chartData
-          }
-         ]
+          }]
         }
         this.chartData = data;
       },
@@ -294,10 +301,10 @@
 
   .vdp-datepicker {
     input {
-    width: 100%;
+      width: 100%;
       color: rgba(0, 0, 0, 0.87);
       border: none;
-  }
+    }
   }
 
   .card {
@@ -332,53 +339,53 @@
     margin-bottom: 30px;
   }
 
-.outcomes {
-  font-weight:400;
-  margin-bottom: 30px;
-  .bord {
-    margin: 0 auto;
-    max-width: 60px;
-    border: 2px solid transparent;
-  }
-  &.neu {
-    &:hover {
-      p {
-        color: rgba(45,183,245, 0.8);
-      }
-      .bord {
-        border: 1.5px solid rgba(45,183,245, 0.8);
+  .outcomes {
+    font-weight: 400;
+    margin-bottom: 30px;
+    .bord {
+      margin: 0 auto;
+      max-width: 60px;
+      border: 2px solid transparent;
+    }
+    &.neu {
+      &:hover {
+        p {
+          color: rgba(45, 183, 245, 0.8);
+        }
+        .bord {
+          border: 1.5px solid rgba(45, 183, 245, 0.8);
+        }
       }
     }
-  }
-  &.neg {
-    &:hover {
-      p {
-        color: rgba(245, 45, 83, 0.7);
-      }
-      .bord {
-        border: 1.5px solid rgba(245, 45, 83, 0.7);
-      }
-    }
-  }
-  &.pos{
-    &:hover {
-      p {
-        color: rgba(38, 207, 91, 0.7);
-      }
-      .bord {
-        border: 1.5px solid rgba(38, 207, 91, 0.7);
+    &.neg {
+      &:hover {
+        p {
+          color: rgba(245, 45, 83, 0.7);
+        }
+        .bord {
+          border: 1.5px solid rgba(245, 45, 83, 0.7);
+        }
       }
     }
+    &.pos {
+      &:hover {
+        p {
+          color: rgba(38, 207, 91, 0.7);
+        }
+        .bord {
+          border: 1.5px solid rgba(38, 207, 91, 0.7);
+        }
+      }
+    }
+    .header {
+      color: rgba(0, 0, 0, 0.56);
+      margin: 0px;
+      font-size: 14px;
+    }
+    .content {
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.87);
+      margin-bottom: 6px;
+    }
   }
-  .header {
-    color: rgba(0, 0, 0, 0.56);
-    margin: 0px;
-    font-size: 14px;
-  }
-  .content {
-    font-size: 18px;
-    color: rgba(0,0,0,0.87);
-    margin-bottom: 6px;
-  }
-}
 </style>

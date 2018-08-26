@@ -3,6 +3,7 @@ import {
     Line,
     mixins
 } from 'vue-chartjs'
+
 const {
     reactiveProp
 } = mixins
@@ -14,6 +15,10 @@ export default {
     data() {
         return {
             chartOptions: {
+                events: ['click'],
+                onClick: function (event, item) {
+                    this.update();
+                },
                 maintainAspectRatio: false,
                 tooltips: {
                     callbacks: {
