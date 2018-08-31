@@ -1,10 +1,21 @@
 <template>
   <div class="sign-up">
-    <p>Let's create a new account !</p>
-    <input type="text" v-model="email" placeholder="Email"><br>
-    <input type="password" v-model="password" placeholder="Password"><br>
-    <button v-on:click="signUp">Sign Up</button>
-    <span>or go back to <router-link to="/login">login</router-link>.</span>
+    <h3>Sign Up</h3>
+    <b-form id="app" class="row" style="justify-content: center;">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="inputfield">
+          <label for="comment">Email:</label>
+          <b-form-input v-model="email" type="text" placeholder="Email" required></b-form-input>
+        </div>
+        <div class="inputfield">
+          <label for="comment">Password:</label>
+          <b-form-input v-model="password" type="password" placeholder="Password" required></b-form-input>
+        </div>
+
+        <button v-on:click="signUp" class="submit">Sign Up</button>
+        <span>or go back to <router-link to="/login">login</router-link>.</span>
+      </div>
+    </b-form>
   </div>
 </template>
 
@@ -23,7 +34,7 @@
       signUp: function() {
         firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
           (user) => {
-            this.$router.replace('hello')
+            this.$router.replace('main')
           },
           (err) => {
             alert('Oops. ' + err.message)
@@ -35,19 +46,10 @@
 </script>
 
 <style scoped>
-  .signUp {
+  .sign-up {
     margin-top: 40px;
   }
-  input {
-    margin: 10px 0;
-    width: 20%;
-    padding: 15px;
-  }
-  button {
-    margin-top: 10px;
-    width: 10%;
-    cursor: pointer;
-  }
+
   span {
     display: block;
     margin-top: 20px;

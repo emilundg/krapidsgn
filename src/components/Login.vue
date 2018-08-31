@@ -12,7 +12,7 @@
           <b-form-input v-model="password" type="password" placeholder="Password" required></b-form-input>
         </div>
 
-        <button v-on:click="signIn">Connection</button>
+        <button v-on:click="signIn" class="submit">Connection</button>
         <p>You don't have an account ? You can
           <router-link to="/sign-up">create one</router-link>
         </p>
@@ -47,16 +47,8 @@
 </script>
 
 <style scoped>
-  /* "scoped" attribute limit the CSS to this component only */
-
   .login {
     margin-top: 40px;
-  }
-
-  button {
-    margin-top: 20px;
-    width: 10%;
-    cursor: pointer;
   }
 
   p {
