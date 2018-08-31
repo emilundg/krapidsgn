@@ -108,8 +108,8 @@
 
 
           <button type="submit" class="submit">
-                                    Submit
-                                  </button>
+                                                  Submit
+                                                </button>
 
         </b-form>
       </b-card>
@@ -172,7 +172,8 @@
         situation: '',
         result: '',
         consequence: '',
-        datacollection: null
+        datacollection: null,
+        currentUserId: ''
       }
     },
     created() {
@@ -184,7 +185,9 @@
         timestampsInSnapshots: true
       });
 
-      this.$binding("incidents", Firebase.firestore().collection("incidents").orderBy("date"))
+      this.currentUserId = Firebase.auth().currentUser.uid
+
+      this.$binding("incidents", Firebase.firestore().collection(this.currentUserId).orderBy("date"))
         .then((incidents) => {
           this.incidents = incidents
         })
@@ -194,51 +197,55 @@
         return Moment(date).format('H:mm DD MMMM YYYY');
       },
       doShiet() {
-        var chartData = []
-        var pointBg = []
-        var self = this
-        self.posOut = 0
-        self.negOut = 0
-        this.incidents.forEach(function(el) {
-          var obj = {};
-          obj.t = Moment(new Date(el.date.seconds * 1000), "H:mm DD MMMM YYYY")
-          obj.y = el.intensity;
-          obj.situation = el.situation;
-          obj.result = el.result;
-          obj.consequence = el.consequence;
+        Firebase.firestore().collection(this.currentUserId).get().then(query => {
+          if (query.size > 0) {
+            var chartData = []
+            var pointBg = []
+            var self = this
+            self.posOut = 0
+            self.negOut = 0
+            this.incidents.forEach(function(el) {
+              var obj = {};
+              obj.t = Moment(new Date(el.date.seconds * 1000), "H:mm DD MMMM YYYY")
+              obj.y = el.intensity;
+              obj.situation = el.situation;
+              obj.result = el.result;
+              obj.consequence = el.consequence;
 
-          if (el.pos) {
-            pointBg.push('rgba(38, 207, 91, 0.6)')
-            self.posOut += 1
-          } else if (!el.pos) {
-            pointBg.push('rgba(245, 45, 83, 0.6)')
-            self.negOut += 1
+              if (el.pos) {
+                pointBg.push('rgba(38, 207, 91, 0.6)')
+                self.posOut += 1
+              } else if (!el.pos) {
+                pointBg.push('rgba(245, 45, 83, 0.6)')
+                self.negOut += 1
+              }
+              chartData.push(obj);
+            })
+
+            var first = chartData[0].t;
+            var last = chartData[chartData.length - 1].t;
+
+            var data = {
+              labels: [first, last],
+              datasets: [{
+                radius: 7,
+                cubicInterpolationMode: 'monotone',
+                pointBackgroundColor: pointBg,
+                backgroundColor: 'rgba(45,183,245, 0.15)',
+                borderColor: 'rgba(45,183,245, 0.56)',
+                label: 'All',
+                data: chartData
+              }]
+            }
+            this.chartData = data;
           }
-          chartData.push(obj);
         })
-
-        var first = chartData[0].t;
-        var last = chartData[chartData.length - 1].t;
-
-        var data = {
-          labels: [first, last],
-          datasets: [{
-            radius: 7,
-            cubicInterpolationMode: 'monotone',
-            pointBackgroundColor: pointBg,
-            backgroundColor: 'rgba(45,183,245, 0.15)',
-            borderColor: 'rgba(45,183,245, 0.56)',
-            label: 'All',
-            data: chartData
-          }]
-        }
-        this.chartData = data;
       },
       onSubmit(e) {
         this.loading = true;
         // Add a new document with a generated id.
         e.preventDefault();
-        const collectionRef = Firebase.firestore().collection("incidents");
+        const collectionRef = Firebase.firestore().collection(this.currentUserId);
         collectionRef
           .add({
             intensity: this.intensity,
