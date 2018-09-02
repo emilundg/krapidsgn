@@ -9,7 +9,7 @@
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav class="ml-auto">
             <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Add Incident</b-nav-item>
-            <b-nav-item class="button" @click="doShiet()" v-bind:active="tab === 2" v-on:click="tab = 2" href="#">Overview</b-nav-item>
+            <b-nav-item class="button" @click="doShiet()" v-bind:active="tab === 2" href="#">Overview</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -108,8 +108,8 @@
 
 
           <button type="submit" class="submit">
-                                                  Submit
-                                                </button>
+                                                    Submit
+                                                  </button>
 
         </b-form>
       </b-card>
@@ -196,7 +196,7 @@
       customFormatter(date) {
         return Moment(date).format('H:mm DD MMMM YYYY');
       },
-      doShiet() {
+      async doShiet() {
         Firebase.firestore().collection(this.currentUserId).get().then(query => {
           if (query.size > 0) {
             var chartData = []
@@ -239,11 +239,11 @@
             }
             this.chartData = data;
           }
+          this.tab = 2;
         })
       },
       onSubmit(e) {
         this.loading = true;
-        // Add a new document with a generated id.
         e.preventDefault();
         const collectionRef = Firebase.firestore().collection(this.currentUserId);
         collectionRef

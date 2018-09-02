@@ -4,16 +4,15 @@ import App from './App.vue';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import VueFirestore from 'vue-firestore';
-import firebase from 'firebase/app'
-import router from './router'
+import firebase from 'firebase/app';
+import router from './router';
 
 Vue.use(VueFirestore);
 
 Vue.use(BootstrapVue);
 
 
-Vue.config.productionTip = false
-
+Vue.config.productionTip = false;
 
 var app;
 var config = {
@@ -25,13 +24,15 @@ var config = {
   messagingSenderId: "557946171881"
 };
 firebase.initializeApp(config)
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (!app) {
     /* eslint-disable no-new */
     app = new Vue({
       el: '#app',
       template: '<App/>',
-      components: { App },
+      components: {
+        App
+      },
       router
     })
   }
