@@ -1,7 +1,7 @@
 <template>
   <div class="sign-up">
     <h3>Sign Up</h3>
-    <b-form id="app" class="row" style="justify-content: center;">
+    <div id="app" class="row" style="justify-content: center;">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="inputfield">
           <label for="comment">Email:</label>
@@ -15,7 +15,7 @@
         <button v-on:click="signUp" class="submit">Sign Up</button>
         <span>or go back to <router-link to="/login">login</router-link>.</span>
       </div>
-    </b-form>
+    </div>
   </div>
 </template>
 

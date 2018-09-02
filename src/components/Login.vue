@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <h3>Sign In</h3>
-    <b-form id="app" class="row" style="justify-content: center;">
+    <div id="app" class="row" style="justify-content: center;">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="inputfield">
           <label for="comment">Email:</label>
@@ -17,7 +17,7 @@
           <router-link to="/sign-up">create one</router-link>
         </p>
       </div>
-    </b-form>
+    </div>
   </div>
 </template>
 
