@@ -1,51 +1,25 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-import Main from '../components/Main.vue'
-import Login from '../components/Login.vue'
-import SignUp from '../components/SignUp.vue'
-import firebase from 'firebase'
+import Main from '../components/Main.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 let router = new Router({
-  routes: [
-    {
+  routes: [{
       path: '*',
-      redirect: '/login'
+      redirect: '/main'
     },
     {
       path: '/',
-      redirect: '/login'
-    },
-    {
-      path: '/sign-up',
-      name: 'SignUp',
-      component: SignUp
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
+      redirect: '/main'
     },
     {
       path: '/main',
       name: 'Main',
-      component: Main,
-      meta: {
-        requiresAuth: true
-      }
+      component: Main
     }
   ]
-})
+});
 
-router.beforeEach((to, from, next) => {
-  let currentUser = firebase.auth().currentUser;
-  let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-
-  if (requiresAuth && !currentUser) next('login')
-  else if (!requiresAuth && currentUser) next('main')
-  else next()
-})
-
-export default router
+export default router;

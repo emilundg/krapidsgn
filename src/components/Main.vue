@@ -1,273 +1,213 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
+      <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-        <b-navbar-brand href="#">NoFuzz</b-navbar-brand>
+                                                                                                                                        <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-        <b-navbar-toggle style="border-radius: 0px; border-top: 0px; border-bottom: 0px;" target="nav_collapse"></b-navbar-toggle>
-        <b-collapse is-nav id="nav_collapse">
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Add Incident</b-nav-item>
-            <b-nav-item class="button" @click="doShiet()" v-bind:active="tab === 2" href="#">Overview</b-nav-item>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-      <div class="row" style="justify-content: center;">
-        <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-6 mb-4">
-          <h2>Incidents</h2>
-          <line-chart :chartData="chartData"></line-chart>
-        </b-card>
-
-        <b-card v-if="tab === 2" tag="article" class="col-xs-10 col-sm-10 col-md-4 mb-4" id="data" style="">
-          <h2>Data</h2>
-          <div class="row" style="margin-top: 30px; justify-content: center;">
-            <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neu">
-              <p class="header">Total:</p>
-              <p class="content"> {{ posOut + negOut }} </p>
-              <div class="bord"></div>
-            </div>
-            <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes pos">
-              <p class="header">Pos:</p>
-              <p class="content"> {{ posOut }} </p>
-              <div class="bord"></div>
-            </div>
-            <div class="col-4 col-sm-4 col-md-3 col-l-4 outcomes neg">
-              <p class="header">Neg:</p>
-              <p class="content"> {{ negOut }} </p>
-              <div class="bord"></div>
-            </div>
-          </div>
-          <table class="table">
-            <tbody>
-              <tr>
-                <td><b>Date:</b></td>
-                <td id="dateData">-</td>
-              </tr>
-              <tr>
-                <td><b>Intensity:</b></td>
-                <td id="intensityData">-</td>
-              </tr>
-              <tr>
-                <td><b>Situation:</b></td>
-                <td id="situationData">-</td>
-              </tr>
-              <tr>
-                <td><b>Result:</b></td>
-                <td id="resultData">-</td>
-              </tr>
-              <tr>
-                <td><b>Consequence:</b></td>
-                <td id="consequenceData">-</td>
-              </tr>
-            </tbody>
-          </table>
-        </b-card>
-      </div>
+                                                                                                                                        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                                                                                                                                        <b-collapse is-nav id="nav_collapse">
+                                                                                                                                          <b-navbar-nav class="ml-auto">
+                                                                                                                                            <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+                                                                                                                                          </b-navbar-nav>
+                                                                                                                                        </b-collapse>
+                                                                                                                                      </b-navbar> -->
     </div>
 
-    <b-container class="container-fluid" v-if="tab === 1" fluid>
-      <b-card v-if="tab === 1" tag="article" class="mb-5" style="margin: 30px auto;">
-        <h2>Add Incident</h2>
-        <b-form id="app" class="row" @submit="onSubmit">
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="inputfield">
-              <label for="comment">Intensity:</label>
-              <b-form-input v-model="intensity" type="text" placeholder="Enter intensity" required></b-form-input>
-            </div>
-
-            <div class="inputfield">
-
-              <label for="comment">Date:</label>
-              <datepicker v-model="date" placeholder="Enter date" class="form-control" :format="customFormatter" required></datepicker>
-            </div>
-
-            <div class="inputfield">
-              <label for="comment">Situation:</label>
-              <b-form-input v-model="situation" type="text" placeholder="Enter situation" required></b-form-input>
-            </div>
-
+    <b-container v-if="tab === 0" class="container-fluid" fluid>
+      <div class="body">
+        <div class="row" style="justify-content: center;">
+          <div v-if="!show" class="content col-2 col-sm-2 col-md-2 col-lg-4 align-middle mb-2">
+            <img class="logo" src="../assets/logo.png" />
+            <button class="submit" @click="show = true">Contact</button>
           </div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        </div>
 
-            <div class="inputfield">
-              <label for="comment">Result:</label>
-              <b-form-input v-model="result" type="text" placeholder="Enter result" required></b-form-input>
+        <div class="row container-row">
+          <transition name="slideRight">
+            <div v-if="show" class="content col-2 col-sm-2 col-md-2 col-lg-4">
+              <img class="logo" src="../assets/logo.png" />
             </div>
-
-            <div class="inputfield">
-              <label for="comment">Consequence:</label>
-              <b-form-input v-model="consequence" type="text" placeholder="Enter consequence" required></b-form-input>
+          </transition>
+          <transition name="slideRight">
+            <div v-if="show" class="right-content col-lg-7">
+              <div class="row" style="justify-content: center;">
+                <swiper :options="swiperOption" v-if="show" class="col-lg-8">
+                  <swiper-slide>
+                    <b-card title="Pricing">
+                      <p class="card-text">
+                        <ul class="standard-list">
+                          <li>
+                            <img class="icon" src="../assets/check.svg" /> Free site evaluation and fast delivery.
+                          </li>
+                          <li>
+                            <img class="icon" src="../assets/check.svg" /> Coaching sessions for 250 SEK/h
+                          </li>
+                          <li>
+                          </li>
+                        </ul>
+                      </p>
+                    </b-card>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <b-card title="Contact">
+                      <div class="inputgroup">
+                        <label for="comment">Company email:</label>
+                        <b-form-input type="text" v-model="email" placeholder="Enter company email" required></b-form-input>
+                      </div>
+                      <div class="inputgroup">
+                        <label for="comment">Webpage:</label>
+                        <b-form-input type="text" v-model="company" placeholder="Enter URL" required></b-form-input>
+                      </div>
+                      <button class="submit" @click="sendEmail()">Submit</button>
+                    </b-card>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <b-card title="How it works">
+                      <p class="card-text">
+                        Submit a request with a link to the current webpage of the company. After that the company will get an offer of how long and how much the cost will be. Sounds pretty basic right? Yes. But the part where KrapiDsgn. differs from other web-design companies
+                        is the part after where you'll get coaching sessions on how to change parts of the code by yourself. This enables full control of YOUR website.
+                      </p>
+                    </b-card>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <b-card title="About us">
+                      <p class="card-text">
+                        KrapiDsgn. was created as a protest against the current web-design systems. Or motto is that it should not be expensive to lack knowledge of creating websites and it should not be hard to manage the companies site.
+                      </p>
+                    </b-card>
+                  </swiper-slide>
+                  <div class="swiper-pagination" slot="pagination"></div>
+                </swiper>
+              </div>
             </div>
+          </transition>
+        </div>
 
-            <div class="inputfield">
-              <label for="comment">Outcome:</label>
-              <b-form-select v-model="selected" :options="options" class="mb-3" required/>
-            </div>
-          </div>
+      </div>
+    </b-container>
 
-
-          <button type="submit" class="submit">
-                                                    Submit
-                                                  </button>
-
-        </b-form>
+    <b-container v-if="tab === 1" class="container-fluid" fluid>
+      <b-card tag="article" class="mb-5" style="margin: 30px auto;">
+        <h2>Random title</h2>
       </b-card>
-      <dot-loader :loading="loading" :color="color"></dot-loader>
     </b-container>
   </div>
 </template>
 
 <script>
-  import Firebase from 'firebase/app'
-  import 'firebase/firestore'
-  import DotLoader from 'vue-spinner/src/DotLoader.vue'
-  import LineChart from '../LineChart.js'
-  import Moment from 'moment'
-  import Datepicker from 'vuejs-datepicker';
+  require('vue2-animate/dist/vue2-animate.min.css')
+  import 'swiper/dist/css/swiper.css'
 
-  var config = {
-    apiKey: "AIzaSyCtCfmtjXLNZcjg9qVV5NIlg1zd8tJA6X8",
-    authDomain: "control-7c173.firebaseapp.com",
-    databaseURL: "https://control-7c173.firebaseio.com",
-    projectId: "control-7c173",
-    storageBucket: "control-7c173.appspot.com",
-    messagingSenderId: "557946171881"
-  };
+  import {
+    swiper,
+    swiperSlide
+  } from 'vue-awesome-swiper'
 
   export default {
     name: 'app',
     components: {
-      'LineChart': LineChart,
-      'DotLoader': DotLoader,
-      'Datepicker': Datepicker
+      swiper,
+      swiperSlide
     },
     data() {
       return {
-        selected: null,
-        options: [{
-            value: null,
-            text: 'Please select an option'
+        tab: 0,
+        show: false,
+        centeredSlides: true,
+        email: '',
+        company: '',
+        swiperOption: {
+          grabCursor: true,
+          slideToClickedSlide: true,
+          direction: 'vertical',
+          slidesPerView: 'auto',
+          spaceBetween: -300,
+          initialSlide: 1,
+          speed: 400,
+          keyboard: {
+            enabled: true,
+            onlyInViewport: false,
           },
-          {
-            value: true,
-            text: 'Positive'
-          },
-          {
-            value: false,
-            text: 'Negative'
-          },
-        ],
-        color: "rgba(33, 147, 245, 0.5)",
-        errors: [],
-        loading: false,
-        sliding: null,
-        incidents: [],
-        chartData: [],
-        posOut: 0,
-        negOut: 0,
-        tab: 1,
-        date: '',
-        intensity: '',
-        situation: '',
-        result: '',
-        consequence: '',
-        datacollection: null,
-        currentUserId: ''
-      }
-    },
-    created() {
-      if (!Firebase.apps.length) {
-        Firebase.initializeApp(config)
-      }
-
-      Firebase.firestore().settings({
-        timestampsInSnapshots: true
-      });
-
-      this.currentUserId = Firebase.auth().currentUser.uid
-
-      this.$binding("incidents", Firebase.firestore().collection(this.currentUserId).orderBy("date"))
-        .then((incidents) => {
-          this.incidents = incidents
-        })
-    },
-    methods: {
-      customFormatter(date) {
-        return Moment(date).format('H:mm DD MMMM YYYY');
-      },
-      async doShiet() {
-        Firebase.firestore().collection(this.currentUserId).get().then(query => {
-          if (query.size > 0) {
-            var chartData = []
-            var pointBg = []
-            var self = this
-            self.posOut = 0
-            self.negOut = 0
-            this.incidents.forEach(function(el) {
-              var obj = {};
-              obj.t = Moment(new Date(el.date.seconds * 1000), "H:mm DD MMMM YYYY")
-              obj.y = el.intensity;
-              obj.situation = el.situation;
-              obj.result = el.result;
-              obj.consequence = el.consequence;
-
-              if (el.pos) {
-                pointBg.push('rgba(38, 207, 91, 0.6)')
-                self.posOut += 1
-              } else if (!el.pos) {
-                pointBg.push('rgba(245, 45, 83, 0.6)')
-                self.negOut += 1
-              }
-              chartData.push(obj);
-            })
-
-            var first = chartData[0].t;
-            var last = chartData[chartData.length - 1].t;
-
-            var data = {
-              labels: [first, last],
-              datasets: [{
-                radius: 7,
-                cubicInterpolationMode: 'monotone',
-                pointBackgroundColor: pointBg,
-                backgroundColor: 'rgba(45,183,245, 0.15)',
-                borderColor: 'rgba(45,183,245, 0.56)',
-                label: 'All',
-                data: chartData
-              }]
-            }
-            this.chartData = data;
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            dynamicBullets: true
           }
-          this.tab = 2;
-        })
-      },
-      onSubmit(e) {
-        this.loading = true;
-        e.preventDefault();
-        const collectionRef = Firebase.firestore().collection(this.currentUserId);
-        collectionRef
-          .add({
-            intensity: this.intensity,
-            date: this.date,
-            situation: this.situation,
-            result: this.result,
-            consequence: this.consequence,
-            pos: this.selected
-          })
-          .then(function() {
-            window
-              .location
-              .reload();
-          })
-          .catch(function(error) {
-            console.error("Error adding document: ", error);
-          });
+        }
       }
+    },
+    created() {},
+    mounted() {},
+    methods: {
+      sendEmail() {}
     }
   }
 </script>
 
 <style lang="scss">
+  .standard-list {
+    text-align: left;
+    list-style: none;
+  }
 
+  .icon {
+    height: 12px;
+    margin-right: 8px;
+  }
+
+  .swiper-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    top: 30%;
+    padding-right: 40px;
+    .card {
+      min-height: 50vh;
+    }
+    &.swiper-slide-prev,
+    &.swiper-slide-next {
+      .card {
+        color: rgba(255, 255, 255, 0.87);
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.25);
+        input {
+          background: rgba(255, 255, 255, 0.25);
+          border: none;
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.87);
+          }
+        }
+        button {
+          border: none;
+          color: rgba(255, 255, 255, 0.87);
+        }
+      }
+    }
+  }
+
+  .row {
+    .content {
+      margin: 30vh auto;
+    }
+    &.container-row {
+      height: 100%;
+    }
+  }
+
+  .inputgroup {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .right-content {
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19) inset, 0 0px 6px rgba(0, 0, 0, 0.23) inset;
+    background: url('../assets/background.svg');
+  }
+
+  .logo {
+    width: 100%;
+  }
 </style>
