@@ -18,7 +18,7 @@
       <div class="body">
         <div class="row" style="justify-content: center;">
           <div v-if="!show" class="content col-2 col-sm-2 col-md-2 col-lg-4 align-middle mb-2">
-            <img class="logo" src="../assets/logo.png" />
+            <img class="logo" src=".https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
             <button class="submit" @click="show = true">Contact</button>
           </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="row container-row">
           <transition name="slideRight">
             <div v-if="show" class="content col-2 col-sm-2 col-md-2 col-lg-4">
-              <img class="logo" src="../assets/logo.png" />
+              <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
             </div>
           </transition>
           <transition name="slideRight">
@@ -38,10 +38,10 @@
                       <p class="card-text">
                         <ul class="standard-list">
                           <li>
-                            <img class="icon" src="../assets/check.svg" /> Free site evaluation and fast delivery.
+                            <img class="icon" src="https://raw.githubusercontent.com/emilundg/krapidsgn/master/src/assets/check.svg" /> Free site evaluation and fast delivery.
                           </li>
                           <li>
-                            <img class="icon" src="../assets/check.svg" /> Coaching sessions for 250 SEK/h
+                            <img class="icon" src="https://raw.githubusercontent.com/emilundg/krapidsgn/master/src/assets/check.svg" /> Coaching sessions for 250 SEK/h
                           </li>
                           <li>
                           </li>
@@ -210,7 +210,7 @@
 
   .right-content {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19) inset, 0 0px 6px rgba(0, 0, 0, 0.23) inset;
-    background: url('../assets/background.svg');
+    background: url('https://raw.githubusercontent.com/emilundg/krapidsgn/master/src/assets/background.svg');
   }
 
   .logo {
