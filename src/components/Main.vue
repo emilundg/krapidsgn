@@ -124,7 +124,7 @@
           slideToClickedSlide: true,
           direction: 'vertical',
           slidesPerView: 'auto',
-          spaceBetween: -150,
+          spaceBetween: -200,
           initialSlide: 1,
           speed: 400,
           mousewheel: true,
