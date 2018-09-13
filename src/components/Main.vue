@@ -3,23 +3,23 @@
     <div>
       <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-                                                                                                                                                  <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
+                                                                                                                                                    <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-                                                                                                                                                  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                                                                                                                                                  <b-collapse is-nav id="nav_collapse">
-                                                                                                                                                    <b-navbar-nav class="ml-auto">
-                                                                                                                                                      <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
-                                                                                                                                                    </b-navbar-nav>
-                                                                                                                                                  </b-collapse>
-                                                                                                                                                </b-navbar> -->
+                                                                                                                                                    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                                                                                                                                                    <b-collapse is-nav id="nav_collapse">
+                                                                                                                                                      <b-navbar-nav class="ml-auto">
+                                                                                                                                                        <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+                                                                                                                                                      </b-navbar-nav>
+                                                                                                                                                    </b-collapse>
+                                                                                                                                                  </b-navbar> -->
     </div>
 
     <b-container v-if="tab === 0" class="container-fluid" fluid>
       <div class="body">
         <div class="row" style="justify-content: center;">
-          <div v-if="!show" class="content col-8 col-sm-6 col-md-6 col-lg-4 align-middle mb-2">
+          <div v-if="!show" class="landing-content col-8 col-sm-6 col-md-6 col-lg-3 align-middle mb-2">
             <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
-            <button class="submit" @click="show = true">Contact</button>
+            <button class="submit centered" @click="show = true">Contact</button>
           </div>
         </div>
 
@@ -35,15 +35,17 @@
                 <swiper :options="swiperOption" v-if="show" class="col-10 col-sm-10 col-md-10 col-lg-8">
                   <swiper-slide>
                     <b-card title="Pricing">
+                      <img class="card-icon" src="/get.svg" />
                       <p class="card-text">
                         <ul class="standard-list">
                           <li>
-                            <img class="icon" src="../assets/check.svg" /> Free site evaluation and fast delivery.
+                            <img class="icon" src="/check.svg" /> Free site evaluation and fast delivery.
                           </li>
                           <li>
-                            <img class="icon" src="../assets/check.svg" /> Coaching sessions for 250 SEK/h
+                            <img class="icon" src="/check.svg" /> Pay as you scale.
                           </li>
                           <li>
+                            <img class="icon" src="/check.svg" /> Coaching sessions for 250 SEK/h.
                           </li>
                         </ul>
                       </p>
@@ -65,8 +67,8 @@
                   <swiper-slide>
                     <b-card title="How it works">
                       <p class="card-text">
-                        Submit a request with a link to the current webpage of the company. After that the company will get an offer of how long and how much the cost will be. Sounds pretty basic right? Yes. But the part where KrapiDsgn. differs from other web-design companies
-                        is the part after where you'll get coaching sessions on how to change parts of the code by yourself. This enables full control of YOUR website.
+                        Submit a request with a link to the current webpage of the company. After that the company will get an offer of how much time it will take and how much the cost will be. Sounds pretty basic right? <br> <br> The part where KrapiDsgn.
+                        differs from other web-design companies is the part after where you'll get coaching sessions on how to change parts of the code by yourself. This enables full control of YOUR website.
                       </p>
                     </b-card>
                   </swiper-slide>
@@ -126,6 +128,7 @@
           spaceBetween: -300,
           initialSlide: 1,
           speed: 400,
+          mousewheel: true,
           keyboard: {
             enabled: true,
             onlyInViewport: false,
@@ -195,6 +198,9 @@
   }
 
   .row {
+    .landing-content {
+        margin: 30vh auto;
+    }
     .content {
       @media screen and (max-width: 640px) {
         margin: 2vh auto;
@@ -215,10 +221,20 @@
 
   .right-content {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19) inset, 0 0px 6px rgba(0, 0, 0, 0.23) inset;
-    background: url('../assets/background.svg');
+    background: url('/background.svg');
   }
 
   .logo {
     width: 100%;
+  }
+
+  .centered {
+    margin: 10vh auto;
+  }
+
+  .card-icon {
+    width: 30%;
+    margin: 30px 0px;
+    max-width: 90px;
   }
 </style>
