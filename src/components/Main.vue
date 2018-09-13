@@ -3,15 +3,15 @@
     <div>
       <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-                                                                                                                                                    <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
+                                                                                                                                                      <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-                                                                                                                                                    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                                                                                                                                                    <b-collapse is-nav id="nav_collapse">
-                                                                                                                                                      <b-navbar-nav class="ml-auto">
-                                                                                                                                                        <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
-                                                                                                                                                      </b-navbar-nav>
-                                                                                                                                                    </b-collapse>
-                                                                                                                                                  </b-navbar> -->
+                                                                                                                                                      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                                                                                                                                                      <b-collapse is-nav id="nav_collapse">
+                                                                                                                                                        <b-navbar-nav class="ml-auto">
+                                                                                                                                                          <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+                                                                                                                                                        </b-navbar-nav>
+                                                                                                                                                      </b-collapse>
+                                                                                                                                                    </b-navbar> -->
     </div>
 
     <b-container v-if="tab === 0" class="container-fluid" fluid>
@@ -55,11 +55,11 @@
                     <b-card title="Contact">
                       <div class="inputgroup">
                         <label for="comment">Company email:</label>
-                        <b-form-input type="text" v-model="email" placeholder="Enter company email" required></b-form-input>
+                        <b-form-input type="text" autocomplete="off" v-model="email" placeholder="Enter company email" required></b-form-input>
                       </div>
                       <div class="inputgroup">
                         <label for="comment">Webpage:</label>
-                        <b-form-input type="text" v-model="company" placeholder="Enter URL" required></b-form-input>
+                        <b-form-input type="text" autocomplete="off" v-model="company" placeholder="Enter URL" required></b-form-input>
                       </div>
                       <button class="submit" @click="sendEmail()">Submit</button>
                     </b-card>
@@ -121,7 +121,6 @@
         email: '',
         company: '',
         swiperOption: {
-          grabCursor: true,
           slideToClickedSlide: true,
           direction: 'vertical',
           slidesPerView: 'auto',
@@ -199,7 +198,7 @@
 
   .row {
     .landing-content {
-        margin: 30vh auto;
+      margin: 30vh auto;
     }
     .content {
       @media screen and (max-width: 640px) {
