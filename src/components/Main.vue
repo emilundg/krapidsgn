@@ -32,7 +32,7 @@
           <transition name="slideRight">
             <div v-if="show" class="right-content col-sm-12 col-md-9 col-lg-9">
               <div class="row" style="justify-content: center;">
-                <swiper :options="swiperOption" v-if="show" class="col-10 col-sm-10 col-md-10 col-lg-8">
+                <swiper :options="swiperOption" v-if="show" class="col-11 col-sm-10 col-md-10 col-lg-8">
                   <swiper-slide>
                     <b-card title="Pricing">
                       <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
@@ -124,7 +124,7 @@
           slideToClickedSlide: true,
           direction: 'vertical',
           slidesPerView: 'auto',
-          spaceBetween: -300,
+          spaceBetween: -200,
           initialSlide: 1,
           speed: 400,
           mousewheel: true,
