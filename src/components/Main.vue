@@ -35,14 +35,14 @@
                 <swiper :options="swiperOption" v-if="show" class="col-10 col-sm-10 col-md-10 col-lg-8">
                   <swiper-slide>
                     <b-card title="Pricing">
-                      <img class="card-icon" src="/get.svg" />
+                      <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
                       <p class="card-text">
                         <ul class="standard-list">
                           <li>
-                            <img class="icon" src="/check.svg" /> Free site evaluation and fast delivery.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Free site evaluation and fast delivery.
                           </li>
                           <li>
-                            <img class="icon" src="/check.svg" /> Pay as you scale.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Pay as you scale.
                           </li>
                           <li>
                             <img class="icon" src="/check.svg" /> Coaching sessions for 250 SEK/h.
@@ -221,7 +221,7 @@
 
   .right-content {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19) inset, 0 0px 6px rgba(0, 0, 0, 0.23) inset;
-    background: url('/background.svg');
+    background: url('https://github.com/emilundg/krapidsgn/blob/master/src/assets/background.png?raw=true');
   }
 
   .logo {

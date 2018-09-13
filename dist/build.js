@@ -34156,7 +34156,7 @@ if (inBrowser && window.Vue) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Main_vue__ = __webpack_require__(57);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_51e1f82f_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e3c11bc_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__ = __webpack_require__(244);
 function injectStyle (ssrContext) {
   __webpack_require__(218)
 }
@@ -34176,7 +34176,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Main_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_51e1f82f_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e3c11bc_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -34197,7 +34197,7 @@ var content = __webpack_require__(219);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("1b2127d6", content, true, {});
+var update = __webpack_require__(8)("b83560ea", content, true, {});
 
 /***/ }),
 /* 219 */
@@ -34208,7 +34208,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, ".standard-list{text-align:left;list-style:none}.icon{height:12px;margin-right:8px}.swiper-container{height:100vh;overflow:hidden}.swiper-slide{top:30%;padding-right:40px}.swiper-slide .card{min-height:50vh}.swiper-slide.swiper-slide-next .card,.swiper-slide.swiper-slide-prev .card{color:hsla(0,0%,100%,.87);box-shadow:none;background:hsla(0,0%,100%,.25)}.swiper-slide.swiper-slide-next .card input,.swiper-slide.swiper-slide-prev .card input{background:hsla(0,0%,100%,.25);border:none}.swiper-slide.swiper-slide-next .card input::placeholder,.swiper-slide.swiper-slide-prev .card input::placeholder{color:hsla(0,0%,100%,.87)}.swiper-slide.swiper-slide-next .card button,.swiper-slide.swiper-slide-prev .card button{border:none;color:hsla(0,0%,100%,.87)}.row .landing-content{margin:30vh auto}@media screen and (max-width:640px){.row .content{margin:2vh auto}}@media screen and (min-width:641px){.row .content{margin:30vh auto}}.row.container-row{height:100%}.inputgroup{text-align:left;margin-bottom:30px}.right-content{box-shadow:inset 0 0 20px rgba(0,0,0,.19),inset 0 0 6px rgba(0,0,0,.23);background:url(\"/background.svg\")}.logo{width:100%}.centered{margin:10vh auto}.card-icon{width:30%;margin:30px 0;max-width:90px}", ""]);
+exports.push([module.i, ".standard-list{text-align:left;list-style:none}.icon{height:12px;margin-right:8px}.swiper-container{height:100vh;overflow:hidden}.swiper-slide{top:30%;padding-right:40px}.swiper-slide .card{min-height:50vh}.swiper-slide.swiper-slide-next .card,.swiper-slide.swiper-slide-prev .card{color:hsla(0,0%,100%,.87);box-shadow:none;background:hsla(0,0%,100%,.25)}.swiper-slide.swiper-slide-next .card input,.swiper-slide.swiper-slide-prev .card input{background:hsla(0,0%,100%,.25);border:none}.swiper-slide.swiper-slide-next .card input::placeholder,.swiper-slide.swiper-slide-prev .card input::placeholder{color:hsla(0,0%,100%,.87)}.swiper-slide.swiper-slide-next .card button,.swiper-slide.swiper-slide-prev .card button{border:none;color:hsla(0,0%,100%,.87)}.row .landing-content{margin:30vh auto}@media screen and (max-width:640px){.row .content{margin:2vh auto}}@media screen and (min-width:641px){.row .content{margin:30vh auto}}.row.container-row{height:100%}.inputgroup{text-align:left;margin-bottom:30px}.right-content{box-shadow:inset 0 0 20px rgba(0,0,0,.19),inset 0 0 6px rgba(0,0,0,.23);background:url(\"https://raw.githubusercontent.com/emilundg/krapidsgn/master/src/assets/background.svg?sanitize=1\")}.logo{width:100%}.centered{margin:10vh auto}.card-icon{width:30%;margin:30px 0;max-width:90px}", ""]);
 
 // exports
 
