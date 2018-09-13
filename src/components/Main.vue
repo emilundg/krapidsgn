@@ -173,7 +173,7 @@
 
   .swiper-slide {
     @media screen and (max-width: 640px) {
-      top: 20vh;
+      top: 13vh;
     }
     @media screen and (min-width: 641px) {
       top: 25vh;
