@@ -45,7 +45,7 @@
                             <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Pay as you scale.
                           </li>
                           <li>
-                            <img class="icon" src="/check.svg" /> Coaching sessions for 250 SEK/h.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Coaching sessions for 250 SEK/h.
                           </li>
                         </ul>
                       </p>
