@@ -3,45 +3,45 @@
     <div>
       <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-                                                                                                                                              <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
+                                                                                                                                                  <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-                                                                                                                                              <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                                                                                                                                              <b-collapse is-nav id="nav_collapse">
-                                                                                                                                                <b-navbar-nav class="ml-auto">
-                                                                                                                                                  <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
-                                                                                                                                                </b-navbar-nav>
-                                                                                                                                              </b-collapse>
-                                                                                                                                            </b-navbar> -->
+                                                                                                                                                  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                                                                                                                                                  <b-collapse is-nav id="nav_collapse">
+                                                                                                                                                    <b-navbar-nav class="ml-auto">
+                                                                                                                                                      <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+                                                                                                                                                    </b-navbar-nav>
+                                                                                                                                                  </b-collapse>
+                                                                                                                                                </b-navbar> -->
     </div>
 
     <b-container v-if="tab === 0" class="container-fluid" fluid>
       <div class="body">
         <div class="row" style="justify-content: center;">
-          <div v-if="!show" class="content col-2 col-sm-2 col-md-2 col-lg-4 align-middle mb-2">
-            <img class="logo" src=".https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
+          <div v-if="!show" class="content col-8 col-sm-6 col-md-6 col-lg-4 align-middle mb-2">
+            <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
             <button class="submit" @click="show = true">Contact</button>
           </div>
         </div>
 
         <div class="row container-row">
           <transition name="slideRight">
-            <div v-if="show" class="content col-2 col-sm-2 col-md-2 col-lg-4">
+            <div v-if="show" class="content col-6 col-sm-4 col-md-3 col-lg-3">
               <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
             </div>
           </transition>
           <transition name="slideRight">
-            <div v-if="show" class="right-content col-lg-7">
+            <div v-if="show" class="right-content col-sm-12 col-md-9 col-lg-9">
               <div class="row" style="justify-content: center;">
-                <swiper :options="swiperOption" v-if="show" class="col-lg-8">
+                <swiper :options="swiperOption" v-if="show" class="col-10 col-sm-10 col-md-10 col-lg-8">
                   <swiper-slide>
                     <b-card title="Pricing">
                       <p class="card-text">
                         <ul class="standard-list">
                           <li>
-                            <img class="icon" src="https://raw.githubusercontent.com/emilundg/krapidsgn/master/src/assets/check.svg" /> Free site evaluation and fast delivery.
+                            <img class="icon" src="../assets/check.svg" /> Free site evaluation and fast delivery.
                           </li>
                           <li>
-                            <img class="icon" src="https://raw.githubusercontent.com/emilundg/krapidsgn/master/src/assets/check.svg" /> Coaching sessions for 250 SEK/h
+                            <img class="icon" src="../assets/check.svg" /> Coaching sessions for 250 SEK/h
                           </li>
                           <li>
                           </li>
@@ -196,7 +196,12 @@
 
   .row {
     .content {
-      margin: 30vh auto;
+      @media screen and (max-width: 640px) {
+        margin: 2vh auto;
+      }
+      @media screen and (min-width: 641px) {
+        margin: 30vh auto;
+      }
     }
     &.container-row {
       height: 100%;
@@ -210,7 +215,7 @@
 
   .right-content {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19) inset, 0 0px 6px rgba(0, 0, 0, 0.23) inset;
-    background: url('https://raw.githubusercontent.com/emilundg/krapidsgn/master/src/assets/background.svg');
+    background: url('../assets/background.svg');
   }
 
   .logo {
