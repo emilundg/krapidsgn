@@ -3,15 +3,15 @@
     <div>
       <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-                                                                                                                                                      <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
+                                                                                                                                                            <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-                                                                                                                                                      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                                                                                                                                                      <b-collapse is-nav id="nav_collapse">
-                                                                                                                                                        <b-navbar-nav class="ml-auto">
-                                                                                                                                                          <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
-                                                                                                                                                        </b-navbar-nav>
-                                                                                                                                                      </b-collapse>
-                                                                                                                                                    </b-navbar> -->
+                                                                                                                                                            <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                                                                                                                                                            <b-collapse is-nav id="nav_collapse">
+                                                                                                                                                              <b-navbar-nav class="ml-auto">
+                                                                                                                                                                <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+                                                                                                                                                              </b-navbar-nav>
+                                                                                                                                                            </b-collapse>
+                                                                                                                                                          </b-navbar> -->
     </div>
 
     <b-container v-if="tab === 0" class="container-fluid" fluid>
@@ -42,10 +42,13 @@
                             <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Free site evaluation and fast delivery.
                           </li>
                           <li>
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> All source code.
+                          </li>
+                          <li>
                             <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Pay as you scale.
                           </li>
                           <li>
-                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Coaching sessions for 250 SEK/h.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Optional coaching sessions for 250 SEK/h.
                           </li>
                         </ul>
                       </p>
@@ -124,7 +127,6 @@
           slideToClickedSlide: true,
           direction: 'vertical',
           slidesPerView: 'auto',
-          spaceBetween: -200,
           initialSlide: 1,
           speed: 400,
           mousewheel: true,
@@ -170,7 +172,12 @@
   }
 
   .swiper-slide {
-    top: 30%;
+    @media screen and (max-width: 640px) {
+      top: 20vh;
+    }
+    @media screen and (min-width: 641px) {
+      top: 25vh;
+    }
     padding-right: 40px;
     .card {
       min-height: 50vh;
@@ -198,7 +205,7 @@
 
   .row {
     .landing-content {
-      margin: 30vh auto;
+      margin: 30vh auto 0 auto;
     }
     .content {
       @media screen and (max-width: 640px) {
