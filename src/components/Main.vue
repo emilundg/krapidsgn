@@ -227,7 +227,8 @@
 
   .right-content {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19) inset, 0 0px 6px rgba(0, 0, 0, 0.23) inset;
-    background: url('https://github.com/emilundg/krapidsgn/blob/master/src/assets/background.png?raw=true');
+    background: url('https://github.com/emilundg/krapidsgn/blob/master/src/assets/background.png?raw=true') fixed center no-repeat no-repeat;
+    background-size: cover;
   }
 
   .logo {
