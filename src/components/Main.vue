@@ -18,7 +18,7 @@
       <div class="body">
         <div class="row" style="justify-content: center;">
           <div v-if="!show" class="landing-content col-8 col-sm-6 col-md-6 col-lg-3 align-middle mb-2">
-            <img class="logo" src="/assets/logo.png" />
+            <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
             <button class="submit centered" @click="show = true">Kontakt</button>
           </div>
         </div>
@@ -26,9 +26,9 @@
         <div class="row container-row">
           <transition name="slideRight">
             <div v-if="show" class="content col-6 col-sm-4 col-md-3 col-lg-3">
-              <img class="logo" src="/assets/logo.png" />
+              <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
               <div class="motto-container">
-                <img class="motto-img" src="/assets/quote.svg" />
+                <img class="motto-img" src="https://cdn.rawgit.com/emilundg/eee17f6988f3f934b21e386bfecc89ed/raw/724c31904c17cf2cafc4b0af158394d1d6614173/quote.svg" />
                 <p class="motto">Det skall varken vara dyrt eller svårt att ta hand om sin egna hemsida.</p>
               </div>
             </div>
@@ -39,20 +39,20 @@
                 <swiper :options="swiperOption" v-if="show" class="col-11 col-sm-10 col-md-10 col-lg-8">
                   <swiper-slide>
                     <b-card title="Pris">
-                      <img class="card-icon" src="/assets/get.png" />
+                      <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
                       <p class="card-text">
                         <ul class="standard-list">
                           <li>
-                            <img class="icon" src="/assets/check.svg" /> Gratis evaluering och snabb leverans.
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Gratis evaluering och snabb leverans.
                           </li>
                           <li>
-                            <img class="icon" src="/assets/check.svg" /> Alla tillgångar, 100% kontroll.
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Alla tillgångar, 100% kontroll.
                           </li>
                           <li>
-                            <img class="icon" src="/assets/check.svg" /> Betala mer för fler användare av hemsidan.
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Betala mer för fler användare av hemsidan.
                           </li>
                           <li>
-                            <img class="icon" src="/assets/check.svg" /> Valbar coaching eller underhåll av hemsidan för 250:-/timme.
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Valbar coaching eller underhåll av hemsidan för 250:-/timme.
                           </li>
                         </ul>
                       </p>
@@ -60,7 +60,7 @@
                   </swiper-slide>
                   <swiper-slide>
                     <b-card title="Kontakt">
-                      <img class="card-icon" style="width: 40px" src="/assets/Contact.svg" />
+                      <img class="card-icon" style="width: 40px" src="https://cdn.rawgit.com/emilundg/29eb090e9af059fb4a6ae8d93026b5df/raw/0385f98e2dcc5e0946f977e9f7a6eba3f93f33db/contact.svg" />
                       <div class="inputgroup">
                         <label for="comment">Mail:</label>
                         <b-form-input type="text" autocomplete="off" v-model="email" placeholder="Skriv mail" required></b-form-input>
@@ -76,7 +76,7 @@
                     <vue-flip v-if="window.width <= 640" active-click="true">
                       <div slot="front">
                         <b-card class="flipCard" title="Hur det fungerar">
-                          <img class="card-icon" src="/assets/Settings.svg" />
+                          <img class="card-icon" src="https://cdn.rawgit.com/emilundg/b25797bc55a0d006bf56914a14d58fd4/raw/5dd9732b57d6a7cbbe2f816c5de4fe42bb0b62fd/settings.svg" />
                           <p class="card-text">
                             Skicka en förfrågan med en länk till den nuvarande hemsidan av företaget. Efter det kommer vi att skicka tillbaka en offert på hur lång tid det kommer ta och hur mycket det kommer kosta.
                           </p>
@@ -85,7 +85,7 @@
                       </div>
                       <div slot="back">
                         <b-card class="flipCard" title="Hur det fungerar">
-                          <img class="card-icon" src="/assets/Settings.svg" />
+                          <img class="card-icon" src="https://cdn.rawgit.com/emilundg/b25797bc55a0d006bf56914a14d58fd4/raw/5dd9732b57d6a7cbbe2f816c5de4fe42bb0b62fd/settings.svg" />
                           <p class="card-text">
                             Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand
                             om allting. Detta gör att man får full tillgång över hemsidan.
@@ -95,7 +95,7 @@
                       </div>
                     </vue-flip>
                     <b-card v-else title="Hur det fungerar">
-                      <img class="card-icon" src="/assets/Settings.svg" />
+                      <img class="card-icon" src="https://cdn.rawgit.com/emilundg/b25797bc55a0d006bf56914a14d58fd4/raw/5dd9732b57d6a7cbbe2f816c5de4fe42bb0b62fd/settings.svg" />
                       <p class="card-text">
                         Skicka en förfrågan med en länk till den nuvarande hemsidan av företaget. Efter det kommer vi att skicka tillbaka en offert på hur lång tid det kommer ta och hur mycket det kommer kosta. <br><br>  Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren
                         programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting.
@@ -281,7 +281,7 @@
 
   .right-content {
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.19) inset, 0 0px 6px rgba(0, 0, 0, 0.23) inset;
-    background: url('/assets/background.svg') fixed center no-repeat no-repeat;
+    background: url('https://cdn.rawgit.com/emilundg/9321e86e792f684491444d6990413078/raw/7da13754a107a62032171b21ff48532056b4f8cb/background.svg') fixed center no-repeat no-repeat;
     background-size: cover;
   }
 
