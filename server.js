@@ -42,6 +42,10 @@ app.get('*', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 })
 
+app.get('/.well-known/acme-challenge/r6BcXa46Ml-unQTNrFq3VMzoY1oA3K3NgxM4tz-hw5w', function(req, res) {
+    res.send('r6BcXa46Ml-unQTNrFq3VMzoY1oA3K3NgxM4tz-hw5w.qmn5ogFW6AYmmbnfD9Mmd5HC58II9i9--DIgM2srvmw')
+})
+
 // Create default port to serve the app on
 const port = process.env.PORT || 5000
 app.listen(port)
