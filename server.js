@@ -37,15 +37,10 @@ app.use("/", serveStatic(path.join(__dirname, '/dist')))
 // Add API api-router.
 app.use('/api', apiRouter)
 
-app.get('/.well-known/acme-challenge/M1rI6K6FCG4zZUeyn_oDO1gQmr-fd9vrtf7oazKJp1s', function(req, res) {
-    res.send('M1rI6K6FCG4zZUeyn_oDO1gQmr-fd9vrtf7oazKJp1s.qmn5ogFW6AYmmbnfD9Mmd5HC58II9i9--DIgM2srvmw')
-})
-
 // Catch all routes and redirect to the index file
-app.get('/', function (req, res) {
+app.get('*', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 })
-
 
 // Create default port to serve the app on
 const port = process.env.PORT || 5000
