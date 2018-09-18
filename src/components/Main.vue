@@ -3,15 +3,15 @@
     <div>
       <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-                                                                                                                                                            <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
+      <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-                                                                                                                                                            <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                                                                                                                                                            <b-collapse is-nav id="nav_collapse">
-                                                                                                                                                              <b-navbar-nav class="ml-auto">
-                                                                                                                                                                <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
-                                                                                                                                                              </b-navbar-nav>
-                                                                                                                                                            </b-collapse>
-                                                                                                                                                          </b-navbar> -->
+      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+      <b-collapse is-nav id="nav_collapse">
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar> -->
     </div>
 
     <b-container v-if="tab === 0" class="container-fluid" fluid>
@@ -19,7 +19,7 @@
         <div class="row" style="justify-content: center;">
           <div v-if="!show" class="landing-content col-8 col-sm-6 col-md-6 col-lg-3 align-middle mb-2">
             <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
-            <button class="submit centered" @click="show = true">Contact</button>
+            <button class="submit centered" @click="show = true">Kontakt</button>
           </div>
         </div>
 
@@ -34,51 +34,55 @@
               <div class="row" style="justify-content: center;">
                 <swiper :options="swiperOption" v-if="show" class="col-11 col-sm-10 col-md-10 col-lg-8">
                   <swiper-slide>
-                    <b-card title="Pricing">
+                    <b-card title="Pris">
                       <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
                       <p class="card-text">
                         <ul class="standard-list">
                           <li>
-                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Free site evaluation and fast delivery.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Gratis evaluering och snabb leverans.
                           </li>
                           <li>
-                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> All source code.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Alla tillgångar, 100% kontroll.
                           </li>
                           <li>
-                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Pay as you scale.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Betala mer för fler användare.
                           </li>
                           <li>
-                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Optional coaching sessions for 250 SEK/h.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Valbar coaching eller underhåll av hemsidan för 250:-/timme.
                           </li>
                         </ul>
                       </p>
                     </b-card>
                   </swiper-slide>
                   <swiper-slide>
-                    <b-card title="Contact">
+                    <b-card title="Kontakt">
+                      <img class="card-icon" style="width: 40px" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/Contact.png?raw=true"/>
                       <div class="inputgroup">
-                        <label for="comment">Company email:</label>
-                        <b-form-input type="text" autocomplete="off" v-model="email" placeholder="Enter company email" required></b-form-input>
+                        <label for="comment">Mail:</label>
+                        <b-form-input type="text" autocomplete="off" v-model="email" placeholder="Skriv mail" required></b-form-input>
                       </div>
                       <div class="inputgroup">
-                        <label for="comment">Webpage:</label>
-                        <b-form-input type="text" autocomplete="off" v-model="company" placeholder="Enter URL" required></b-form-input>
+                        <label for="comment">Hemsida:</label>
+                        <b-form-input type="text" autocomplete="off" v-model="company" placeholder="Skriv URL" required></b-form-input>
                       </div>
-                      <button class="submit" @click="sendEmail()">Submit</button>
+                      <button class="submit" @click="sendEmail()">Skicka</button>
                     </b-card>
                   </swiper-slide>
                   <swiper-slide>
-                    <b-card title="How it works">
+                    <b-card title="Hur det fungerar">
+                      <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/how.png?raw=true"/>
                       <p class="card-text">
-                        Submit a request with a link to the current webpage of the company. After that the company will get an offer of how much time it will take and how much the cost will be. Sounds pretty basic right? <br> <br> The part where KrapiDsgn.
-                        differs from other web-design companies is the part after where you'll get coaching sessions on how to change parts of the code by yourself. This enables full control of YOUR website.
+                        Skicka en förfrågan med en länk till den nuvarande hemsidan av företaget. Efter det kommer vi att skicka tillbaka en offert på hur lång tid det kommer ta och hur mycket det kommer kosta. Låter som vanligt? <br><br> Delen där KrapiDsgn. skiljer sig
+                        mot sina konkurrenter (förutom all tillgång av resurs) är efter hemsidan blivit uppsatt. Då kan man antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting. Detta gör att man
+                        får full tillgång över hemsidan.
                       </p>
                     </b-card>
                   </swiper-slide>
                   <swiper-slide>
-                    <b-card title="About us">
+                    <b-card title="Om oss">
+                      <img class="card-icon" style="width: 54px" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/info.png?raw=true"/>
                       <p class="card-text">
-                        KrapiDsgn. was created as a protest against the current web-design systems. Or motto is that it should not be expensive to lack knowledge of creating websites and it should not be hard to manage the companies site.
+                        KrapiDsgn. skapades i en protest mot nuvarande webbdesignföretag. Vårt motto är att det inte skall vara dyrt att inte ha kunskapen och det skall inte vara svårt att ta hand om företagets hemsida.
                       </p>
                     </b-card>
                   </swiper-slide>
@@ -92,11 +96,11 @@
       </div>
     </b-container>
 
-    <b-container v-if="tab === 1" class="container-fluid" fluid>
+    <!-- <b-container v-if="tab === 1" class="container-fluid" fluid>
       <b-card tag="article" class="mb-5" style="margin: 30px auto;">
         <h2>Random title</h2>
       </b-card>
-    </b-container>
+    </b-container> -->
   </div>
 </template>
 
