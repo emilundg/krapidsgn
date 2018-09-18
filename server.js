@@ -31,6 +31,10 @@ apiRouter.get('/postmaster/:name/:email/:message', (req, res, next) => {
     res.send('Gj m8');
 })
 
+app.get('/.well-known/acme-challenge/M1rI6K6FCG4zZUeyn_oDO1gQmr-fd9vrtf7oazKJp1s', function(req, res) {
+    res.send('M1rI6K6FCG4zZUeyn_oDO1gQmr-fd9vrtf7oazKJp1s.qmn5ogFW6AYmmbnfD9Mmd5HC58II9i9--DIgM2srvmw')
+})
+
 // create middleware to handle the serving the app
 app.use("/", serveStatic(path.join(__dirname, '/dist')))
 
@@ -38,7 +42,7 @@ app.use("/", serveStatic(path.join(__dirname, '/dist')))
 app.use('/api', apiRouter)
 
 // Catch all routes and redirect to the index file
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 })
 
