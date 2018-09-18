@@ -45,7 +45,7 @@
                             <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Alla tillgångar, 100% kontroll.
                           </li>
                           <li>
-                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Betala mer för fler användare.
+                            <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Betala mer för fler användare av hemsidan.
                           </li>
                           <li>
                             <img class="icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/check.png?raw=true" /> Valbar coaching eller underhåll av hemsidan för 250:-/timme.
