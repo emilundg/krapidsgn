@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="488px" height="424px" viewBox="0 0 488 424" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Quote</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Quote" transform="translate(-12.000000, -12.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Shape">
+                <path d="M106.08,12.832 C54.56,12.832 12.768,55.808 12.768,108.832 C12.768,161.824 54.56,204.832 106.08,204.832 C199.36,204.832 137.184,390.4 12.768,390.4 L12.768,435.2 C234.816,435.232 321.824,12.832 106.08,12.832 Z M374.88,12.832 C323.392,12.832 281.6,55.808 281.6,108.832 C281.6,161.824 323.392,204.832 374.88,204.832 C468.192,204.832 406.016,390.4 281.6,390.4 L281.6,435.2 C503.616,435.232 590.624,12.832 374.88,12.832 Z" transform="translate(255.977960, 224.016000) rotate(180.000000) translate(-255.977960, -224.016000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
