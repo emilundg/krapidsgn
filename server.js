@@ -1,9 +1,12 @@
 const express = require('express')
 const serveStatic = require('serve-static')
 const path = require('path')
+var sslRedirect = require('heroku-ssl-redirect');
 
 // create the express app
 const app = express()
+
+app.use(sslRedirect());
 
 var apiRouter = express.Router()
 
