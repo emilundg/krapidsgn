@@ -232,22 +232,7 @@
     }
     &.swiper-slide-prev,
     &.swiper-slide-next {
-      .card {
-        color: rgba(255, 255, 255, 0.87);
-        box-shadow: none;
-        background: rgba(255, 255, 255, 0.25);
-        input {
-          background: rgba(255, 255, 255, 0.25);
-          border: none;
-          &::placeholder {
-            color: rgba(255, 255, 255, 0.87);
-          }
-        }
-        button {
-          border: none;
-          color: rgba(255, 255, 255, 0.87);
-        }
-      }
+      overflow: hidden;
     }
   }
 
