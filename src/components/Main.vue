@@ -3,22 +3,22 @@
     <div>
       <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-                                    <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
+                                                <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-                                    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                                    <b-collapse is-nav id="nav_collapse">
-                                      <b-navbar-nav class="ml-auto">
-                                        <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
-                                      </b-navbar-nav>
-                                    </b-collapse>
-                                  </b-navbar> -->
+                                                <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                                                <b-collapse is-nav id="nav_collapse">
+                                                  <b-navbar-nav class="ml-auto">
+                                                    <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+                                                  </b-navbar-nav>
+                                                </b-collapse>
+                                              </b-navbar> -->
     </div>
 
     <b-container v-if="tab === 0" class="container-fluid" fluid>
       <div class="body">
         <div class="row container-row">
           <transition name="slideRight">
-            <div class="content col-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="header content col-6 col-sm-4 col-md-3 col-lg-3">
               <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
               <div class="motto-container">
                 <img class="motto-img" src="https://cdn.rawgit.com/emilundg/eee17f6988f3f934b21e386bfecc89ed/raw/724c31904c17cf2cafc4b0af158394d1d6614173/quote.svg" />
@@ -57,7 +57,7 @@
                       </div>
                       <div slot="back">
                         <b-card class="flipCard" title="Hur det fungerar">
-                          <p class="card-text" style="margin-top: 15%;">
+                          <p class="card-text" style="margin-top: 25%;">
                             Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting. Detta gör att man får full tillgång över hemsidan.
                           </p>
                           <button class="submit centered">Tillbaka</button>
@@ -105,10 +105,10 @@
     </b-container>
 
     <!-- <b-container v-if="tab === 1" class="container-fluid" fluid>
-                                    <b-card tag="article" class="mb-5" style="margin: 30px auto;">
-                                      <h2>Random title</h2>
-                                    </b-card>
-                                  </b-container> -->
+                                                <b-card tag="article" class="mb-5" style="margin: 30px auto;">
+                                                  <h2>Random title</h2>
+                                                </b-card>
+                                              </b-container> -->
   </div>
 </template>
 
@@ -214,7 +214,7 @@
 
   .swiper-slide {
     @media screen and (max-width: 640px) {
-      top: 13vh;
+      top: calc((100vh - 416px - 60px)/2);
     }
     @media screen and (min-width: 641px) {
       top: 25vh;
@@ -222,7 +222,13 @@
     padding-right: 40px;
     .card {
       min-height: 50vh;
-      padding-bottom: 30px;
+      ul {
+        padding: 0px;
+      }
+    }
+    .card,
+    .flipCard {
+      height: 416px;
     }
     &.swiper-slide-prev,
     &.swiper-slide-next {
@@ -246,14 +252,16 @@
   }
 
   .row {
-    .landing-content {
-      margin: 30vh auto 0 auto;
-    }
-    .content {
-      @media screen and (max-width: 640px) {
+    @media screen and (max-width: 640px) {
+      .content {
         margin: 2vh auto;
       }
-      @media screen and (min-width: 641px) {
+      .header {
+        height: 30px;
+      }
+    }
+    @media screen and (min-width: 641px) {
+      .content {
         margin: 30vh auto;
       }
     }
@@ -289,7 +297,16 @@
   }
 
   .flipCard {
-    height: 70vh;
+    height: 65vh;
+    position: relative;
+    button {
+      position: absolute;
+      bottom: 10%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 150px;
+    }
   }
 
   .card-icon {
@@ -298,7 +315,8 @@
     max-width: 90px;
   }
 
-  .front, .back {
+  .front,
+  .back {
     backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -309,7 +327,6 @@
     -moz-transition: background-color all 0.5s ease 0s;
     -o-transition: background-color all 0.5s ease 0s;
     transition: background-color all 0.5s ease 0s;
-
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
