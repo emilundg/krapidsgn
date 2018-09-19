@@ -57,8 +57,7 @@
                       </div>
                       <div slot="back">
                         <b-card class="flipCard" title="Hur det fungerar">
-                          <img class="card-icon" src="https://cdn.rawgit.com/emilundg/b25797bc55a0d006bf56914a14d58fd4/raw/5dd9732b57d6a7cbbe2f816c5de4fe42bb0b62fd/settings.svg" />
-                          <p class="card-text">
+                          <p class="card-text" style="margin-top: 15%;">
                             Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting. Detta gör att man får full tillgång över hemsidan.
                           </p>
                           <button class="submit centered">Tillbaka</button>
@@ -297,5 +296,23 @@
     width: 30%;
     margin: 15px 0px;
     max-width: 90px;
+  }
+
+  .front, .back {
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .flipper {
+    -webkit-transition: background-color all 0.5s ease 0s;
+    -moz-transition: background-color all 0.5s ease 0s;
+    -o-transition: background-color all 0.5s ease 0s;
+    transition: background-color all 0.5s ease 0s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
   }
 </style>
