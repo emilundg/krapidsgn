@@ -232,7 +232,7 @@
     }
     &.swiper-slide-prev,
     &.swiper-slide-next {
-      overflow: hidden;
+      opacity: 0;
     }
   }
 

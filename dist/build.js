@@ -31439,7 +31439,7 @@ function removeBVPO(el) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(56);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_63e6e31e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_73dae995_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(212);
 function injectStyle (ssrContext) {
   __webpack_require__(210)
 }
@@ -31459,7 +31459,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_63e6e31e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_73dae995_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -31480,7 +31480,7 @@ var content = __webpack_require__(211);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("31fd6962", content, true, {});
+var update = __webpack_require__(8)("9db1c714", content, true, {});
 
 /***/ }),
 /* 211 */
@@ -31491,7 +31491,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "#app{font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center;color:#2c3e50;background:#fff}.body{height:100vh}.submit{display:block;margin:30px auto;height:38px;padding:0 30px;line-height:38px;text-transform:uppercase;background-color:transparent;border-radius:4px;border:1px solid #bbb;cursor:pointer;letter-spacing:.1rem;transition:all .2s ease-in;color:rgba(0,0,0,.87)}.submit,.submit:focus{outline:none}.submit:hover{border-color:#868686}.card{border:none;border-radius:0;padding:0;box-shadow:0 3px 8px 0 rgba(68,45,45,.2),0 0 0 1px rgba(0,0,0,.08)}.card h2{margin-bottom:20px}h1,h2{font-weight:400}", ""]);
+exports.push([module.i, "body,html{margin:0;height:100%;overflow:hidden}#app{font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center;color:#2c3e50;background:#fff}.body{height:100vh}.submit{display:block;margin:30px auto;height:38px;padding:0 30px;line-height:38px;text-transform:uppercase;background-color:transparent;border-radius:4px;border:1px solid #bbb;cursor:pointer;letter-spacing:.1rem;transition:all .2s ease-in;color:rgba(0,0,0,.87)}.submit,.submit:focus{outline:none}.submit:hover{border-color:#868686}.card{border:none;border-radius:0;padding:0;box-shadow:0 3px 8px 0 rgba(68,45,45,.2),0 0 0 1px rgba(0,0,0,.08)}.card h2{margin-bottom:20px}h1,h2{font-weight:400}", ""]);
 
 // exports
 
@@ -34186,7 +34186,7 @@ if (inBrowser && window.Vue) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Main_vue__ = __webpack_require__(57);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a884768e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a9257d3_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__ = __webpack_require__(245);
 function injectStyle (ssrContext) {
   __webpack_require__(218)
 }
@@ -34206,7 +34206,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Main_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a884768e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a9257d3_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -34227,7 +34227,7 @@ var content = __webpack_require__(219);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("7ec9caf2", content, true, {});
+var update = __webpack_require__(8)("8fc3b086", content, true, {});
 
 /***/ }),
 /* 219 */
@@ -34238,7 +34238,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "@media screen and (max-width:640px){.motto-container{display:none}}.motto-container .motto-img{width:40px;margin:60px 0 20px;opacity:.87}.motto-container .motto{font-style:italic}.standard-list{text-align:left;list-style:none}.icon{height:12px;margin-right:8px}.swiper-container{height:100vh;overflow:hidden}.swiper-slide{padding-right:40px}@media screen and (max-width:640px){.swiper-slide{top:calc((100vh - 416px - 60px)/2)}}@media screen and (min-width:641px){.swiper-slide{top:25vh}}.swiper-slide .card{min-height:50vh}.swiper-slide .card ul{padding:0}.swiper-slide .card,.swiper-slide .flipCard{height:416px}.swiper-slide.swiper-slide-next .card,.swiper-slide.swiper-slide-prev .card{color:hsla(0,0%,100%,.87);box-shadow:none;background:hsla(0,0%,100%,.25)}.swiper-slide.swiper-slide-next .card input,.swiper-slide.swiper-slide-prev .card input{background:hsla(0,0%,100%,.25);border:none}.swiper-slide.swiper-slide-next .card input::placeholder,.swiper-slide.swiper-slide-prev .card input::placeholder{color:hsla(0,0%,100%,.87)}.swiper-slide.swiper-slide-next .card button,.swiper-slide.swiper-slide-prev .card button{border:none;color:hsla(0,0%,100%,.87)}@media screen and (max-width:640px){.row .content{margin:2vh auto}.row .header{height:30px}}@media screen and (min-width:641px){.row .content{margin:30vh auto}}.row.container-row{height:100%}.inputgroup{text-align:left;max-width:375px!important;margin:0 auto;margin-bottom:30px}.right-content{box-shadow:inset 0 0 20px rgba(0,0,0,.19),inset 0 0 6px rgba(0,0,0,.23);background:url(\"https://cdn.rawgit.com/emilundg/9321e86e792f684491444d6990413078/raw/7da13754a107a62032171b21ff48532056b4f8cb/background.svg\") fixed 50% no-repeat;background-size:cover}.logo{width:100%}@media screen and (max-width:640px){.centered{margin:30px auto}}@media screen and (min-width:641px){.centered{margin:10vh auto}}.flipCard{height:65vh;position:relative}.flipCard button{position:absolute;bottom:10%;left:0;right:0;margin:0 auto;width:150px}.card-icon{width:30%;margin:15px 0;max-width:90px}.back,.front{backface-visibility:hidden;-moz-backface-visibility:hidden;-webkit-backface-visibility:hidden}.flipper{-webkit-transition:background-color all .5s ease 0s;-moz-transition:background-color all .5s ease 0s;-o-transition:background-color all .5s ease 0s;transition:background-color all .5s ease 0s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d}", ""]);
+exports.push([module.i, "@media screen and (max-width:640px){.motto-container{display:none}}.motto-container .motto-img{width:40px;margin:60px 0 20px;opacity:.87}.motto-container .motto{font-style:italic}.standard-list{text-align:left;list-style:none}.icon{height:12px;margin-right:8px}.swiper-container{height:100vh;overflow:hidden}.swiper-slide{padding-right:40px}@media screen and (max-width:640px){.swiper-slide{top:calc((100vh - 416px - 60px)/2)}}@media screen and (min-width:641px){.swiper-slide{top:25vh}}.swiper-slide .card{min-height:50vh}.swiper-slide .card ul{padding:0}.swiper-slide .card,.swiper-slide .flipCard{height:416px}.swiper-slide.swiper-slide-next,.swiper-slide.swiper-slide-prev{opacity:0}@media screen and (max-width:640px){.row .content{margin:2vh auto}.row .header{height:30px}}@media screen and (min-width:641px){.row .content{margin:30vh auto}}.row.container-row{height:100%}.inputgroup{text-align:left;max-width:375px!important;margin:0 auto;margin-bottom:30px}.right-content{box-shadow:inset 0 0 20px rgba(0,0,0,.19),inset 0 0 6px rgba(0,0,0,.23);background:url(\"https://cdn.rawgit.com/emilundg/9321e86e792f684491444d6990413078/raw/7da13754a107a62032171b21ff48532056b4f8cb/background.svg\") fixed 50% no-repeat;background-size:cover}.logo{width:100%}@media screen and (max-width:640px){.centered{margin:30px auto}}@media screen and (min-width:641px){.centered{margin:10vh auto}}.flipCard{height:65vh;position:relative}.flipCard button{position:absolute;bottom:10%;left:0;right:0;margin:0 auto;width:150px}.card-icon{width:30%;margin:15px 0;max-width:90px}.back,.front{backface-visibility:hidden;-moz-backface-visibility:hidden;-webkit-backface-visibility:hidden}.flipper{-webkit-transition:background-color all .5s ease 0s;-moz-transition:background-color all .5s ease 0s;-o-transition:background-color all .5s ease 0s;transition:background-color all .5s ease 0s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d}", ""]);
 
 // exports
 
