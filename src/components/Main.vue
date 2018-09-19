@@ -19,7 +19,7 @@
         <div class="row container-row">
           <transition name="slideRight">
             <div class="content col-6 col-sm-4 col-md-3 col-lg-3">
-              <img class="logo" src="https://www.dropbox.com/s/w48mmj4ofdpfhb4/logo.png?dl=0" />
+              <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
               <div class="motto-container">
                 <img class="motto-img" src="https://cdn.rawgit.com/emilundg/eee17f6988f3f934b21e386bfecc89ed/raw/724c31904c17cf2cafc4b0af158394d1d6614173/quote.svg" />
                 <p class="motto">Det skall varken vara dyrt eller svårt att ta hand om sin egna hemsida.</p>
@@ -75,7 +75,7 @@
                   </swiper-slide>
                   <swiper-slide>
                     <b-card title="Pris">
-                      <img class="card-icon" src="https://www.dropbox.com/s/ttui4nd06018yqm/get.png?dl=0" />
+                      <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
                       <p class="card-text">
                         <ul class="standard-list">
                           <li>
