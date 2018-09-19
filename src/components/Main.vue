@@ -3,29 +3,22 @@
     <div>
       <!-- <b-navbar class="b-navbar" toggleable="md" type="dark" variant="dark">
 
-                                <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
+                                    <b-navbar-brand href="#">KrappiDesign</b-navbar-brand>
 
-                                <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-                                <b-collapse is-nav id="nav_collapse">
-                                  <b-navbar-nav class="ml-auto">
-                                    <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
-                                  </b-navbar-nav>
-                                </b-collapse>
-                              </b-navbar> -->
+                                    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+                                    <b-collapse is-nav id="nav_collapse">
+                                      <b-navbar-nav class="ml-auto">
+                                        <b-nav-item class="button" v-bind:active="tab === 1" v-on:click="tab = 1" href="#">Home</b-nav-item>
+                                      </b-navbar-nav>
+                                    </b-collapse>
+                                  </b-navbar> -->
     </div>
 
     <b-container v-if="tab === 0" class="container-fluid" fluid>
       <div class="body">
-        <div class="row" style="justify-content: center;">
-          <div v-if="!show" class="landing-content col-8 col-sm-6 col-md-6 col-lg-3 align-middle mb-2">
-            <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
-            <button class="submit centered" @click="show = true">Kontakt</button>
-          </div>
-        </div>
-
         <div class="row container-row">
           <transition name="slideRight">
-            <div v-if="show" class="content col-6 col-sm-4 col-md-3 col-lg-3">
+            <div class="content col-6 col-sm-4 col-md-3 col-lg-3">
               <img class="logo" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/logo.png?raw=true" />
               <div class="motto-container">
                 <img class="motto-img" src="https://cdn.rawgit.com/emilundg/eee17f6988f3f934b21e386bfecc89ed/raw/724c31904c17cf2cafc4b0af158394d1d6614173/quote.svg" />
@@ -37,27 +30,6 @@
             <div v-if="show" class="right-content col-sm-12 col-md-9 col-lg-9">
               <div class="row" style="justify-content: center;">
                 <swiper :options="swiperOption" v-if="show" class="col-11 col-sm-10 col-md-10 col-lg-8">
-                  <swiper-slide>
-                    <b-card title="Pris">
-                      <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
-                      <p class="card-text">
-                        <ul class="standard-list">
-                          <li>
-                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Gratis evaluering och snabb leverans.
-                          </li>
-                          <li>
-                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Alla tillgångar, 100% kontroll.
-                          </li>
-                          <li>
-                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Betala mer för fler användare av hemsidan.
-                          </li>
-                          <li>
-                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Valbar coaching eller underhåll av hemsidan för 250:-/timme.
-                          </li>
-                        </ul>
-                      </p>
-                    </b-card>
-                  </swiper-slide>
                   <swiper-slide>
                     <b-card title="Kontakt">
                       <img class="card-icon" style="width: 40px" src="https://cdn.rawgit.com/emilundg/29eb090e9af059fb4a6ae8d93026b5df/raw/0385f98e2dcc5e0946f977e9f7a6eba3f93f33db/contact.svg" />
@@ -87,8 +59,7 @@
                         <b-card class="flipCard" title="Hur det fungerar">
                           <img class="card-icon" src="https://cdn.rawgit.com/emilundg/b25797bc55a0d006bf56914a14d58fd4/raw/5dd9732b57d6a7cbbe2f816c5de4fe42bb0b62fd/settings.svg" />
                           <p class="card-text">
-                            Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand
-                            om allting. Detta gör att man får full tillgång över hemsidan.
+                            Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting. Detta gör att man får full tillgång över hemsidan.
                           </p>
                           <button class="submit centered">Tillbaka</button>
                         </b-card>
@@ -97,12 +68,33 @@
                     <b-card v-else title="Hur det fungerar">
                       <img class="card-icon" src="https://cdn.rawgit.com/emilundg/b25797bc55a0d006bf56914a14d58fd4/raw/5dd9732b57d6a7cbbe2f816c5de4fe42bb0b62fd/settings.svg" />
                       <p class="card-text">
-                        Skicka en förfrågan med en länk till den nuvarande hemsidan av företaget. Efter det kommer vi att skicka tillbaka en offert på hur lång tid det kommer ta och hur mycket det kommer kosta. <br><br>  Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren
-                        programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting.
-                        Detta gör att man får full tillgång över hemsidan.
+                        Skicka en förfrågan med en länk till den nuvarande hemsidan av företaget. Efter det kommer vi att skicka tillbaka en offert på hur lång tid det kommer ta och hur mycket det kommer kosta. <br><br> Efter hemsidan är uppsatt kan man
+                        antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting. Detta gör att man får full tillgång över hemsidan.
                       </p>
                     </b-card>
                   </swiper-slide>
+                  <swiper-slide>
+                    <b-card title="Pris">
+                      <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
+                      <p class="card-text">
+                        <ul class="standard-list">
+                          <li>
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Gratis evaluering och snabb leverans.
+                          </li>
+                          <li>
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Alla tillgångar, 100% kontroll.
+                          </li>
+                          <li>
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Betala mer för fler användare av hemsidan.
+                          </li>
+                          <li>
+                            <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Valbar coaching eller underhåll av hemsidan för 250:-/timme.
+                          </li>
+                        </ul>
+                      </p>
+                    </b-card>
+                  </swiper-slide>
+
                   <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
               </div>
@@ -114,10 +106,10 @@
     </b-container>
 
     <!-- <b-container v-if="tab === 1" class="container-fluid" fluid>
-                                <b-card tag="article" class="mb-5" style="margin: 30px auto;">
-                                  <h2>Random title</h2>
-                                </b-card>
-                              </b-container> -->
+                                    <b-card tag="article" class="mb-5" style="margin: 30px auto;">
+                                      <h2>Random title</h2>
+                                    </b-card>
+                                  </b-container> -->
   </div>
 </template>
 
@@ -142,7 +134,7 @@
     data() {
       return {
         tab: 0,
-        show: false,
+        show: true,
         centeredSlides: true,
         email: '',
         company: '',
@@ -154,7 +146,6 @@
           slideToClickedSlide: true,
           direction: 'vertical',
           slidesPerView: 'auto',
-          initialSlide: 1,
           speed: 400,
           mousewheel: true,
           keyboard: {
