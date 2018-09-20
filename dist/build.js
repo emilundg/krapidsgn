@@ -34186,7 +34186,7 @@ if (inBrowser && window.Vue) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Main_vue__ = __webpack_require__(57);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7554d18c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b32d4388_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__ = __webpack_require__(245);
 function injectStyle (ssrContext) {
   __webpack_require__(218)
 }
@@ -34206,7 +34206,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Main_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7554d18c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b32d4388_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Main_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -34227,7 +34227,7 @@ var content = __webpack_require__(219);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("23b233bd", content, true, {});
+var update = __webpack_require__(8)("6636d66c", content, true, {});
 
 /***/ }),
 /* 219 */
@@ -34238,7 +34238,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "@media screen and (max-width:640px){.motto-container{display:none}}.motto-container .motto-img{width:40px;margin:60px 0 20px;opacity:.87}.motto-container .motto{font-style:italic}.standard-list{text-align:left;list-style:none}.standard-list li{padding:6px}.icon{height:12px;margin-right:8px}.swiper-container{height:100vh;overflow:hidden}.swiper-slide{padding-right:40px}@media screen and (max-width:640px){.swiper-slide{top:calc((100vh - 416px - 60px)/2)}}@media screen and (min-width:641px){.swiper-slide{top:25vh}}@media screen and (min-width:1281px){.swiper-slide .card .card-title{margin:20px}.swiper-slide .card .card-icon{margin:30px}}.swiper-slide .card{min-height:50vh}.swiper-slide .card ul{padding:0}.swiper-slide .card,.swiper-slide .flipCard{height:416px}.swiper-slide.swiper-slide-next,.swiper-slide.swiper-slide-prev{opacity:0}@media screen and (max-width:640px){.row .content{margin:2vh auto}.row .header{height:30px}}@media screen and (min-width:641px){.row .content{margin:30vh auto}}.row.container-row{height:100%}.card-content{max-width:450px!important;margin:0 auto}.inputgroup{text-align:left;margin-bottom:30px}.right-content{box-shadow:inset 0 0 20px rgba(0,0,0,.19),inset 0 0 6px rgba(0,0,0,.23);background:url(\"https://cdn.rawgit.com/emilundg/9321e86e792f684491444d6990413078/raw/7da13754a107a62032171b21ff48532056b4f8cb/background.svg\") fixed 50% no-repeat;background-size:cover}.logo{width:100%}@media screen and (max-width:640px){.centered{margin:30px auto}}@media screen and (min-width:641px){.centered{margin:10vh auto}}.flipCard{height:65vh;position:relative}.flipCard button{position:absolute;bottom:10%;left:0;right:0;margin:0 auto;width:150px}.card-icon{width:30%;margin:15px 0;max-width:90px}.back,.front{backface-visibility:hidden;-moz-backface-visibility:hidden;-webkit-backface-visibility:hidden}.flipper{-webkit-transition:background-color all .5s ease 0s;-moz-transition:background-color all .5s ease 0s;-o-transition:background-color all .5s ease 0s;transition:background-color all .5s ease 0s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d}", ""]);
+exports.push([module.i, "@media screen and (max-width:640px){.motto-container{display:none}}.motto-container .motto-img{width:40px;margin:60px 0 20px;opacity:.87}.motto-container .motto{font-style:italic}.standard-list{text-align:left;list-style:none}.standard-list li{padding:6px}.icon{height:12px;margin-right:8px}.swiper-container{height:100vh;overflow:hidden}.swiper-slide{padding-right:40px}@media screen and (max-width:640px){.swiper-slide{top:calc((100vh - 416px - 60px)/2)}}@media screen and (min-width:641px){.swiper-slide{top:25vh}}@media screen and (min-width:1281px){.swiper-slide .card{padding-bottom:30px}.swiper-slide .card .card-title{margin:10px}.swiper-slide .card .card-icon{margin:30px}}.swiper-slide .card{min-height:50vh}.swiper-slide .card ul{padding:0}.swiper-slide .card,.swiper-slide .flipCard{height:416px}.swiper-slide.swiper-slide-next,.swiper-slide.swiper-slide-prev{opacity:0}@media screen and (max-width:640px){.row .content{margin:2vh auto}.row .header{height:30px}}@media screen and (min-width:641px){.row .content{margin:30vh auto}}.row.container-row{height:100%}.card-content{max-width:450px!important;margin:0 auto}.inputgroup{text-align:left;margin-bottom:30px}.right-content{box-shadow:inset 0 0 20px rgba(0,0,0,.19),inset 0 0 6px rgba(0,0,0,.23);background:url(\"https://cdn.rawgit.com/emilundg/9321e86e792f684491444d6990413078/raw/7da13754a107a62032171b21ff48532056b4f8cb/background.svg\") fixed 50% no-repeat;background-size:cover}.logo{width:100%}@media screen and (max-width:640px){.centered{margin:30px auto}}@media screen and (min-width:641px){.centered{margin:10vh auto}}.flipCard{height:65vh;position:relative}.flipCard button{position:absolute;bottom:10%;left:0;right:0;margin:0 auto;width:150px}.card-icon{width:30%;margin:15px 0;max-width:90px}.back,.front{backface-visibility:hidden;-moz-backface-visibility:hidden;-webkit-backface-visibility:hidden}.flipper{-webkit-transition:background-color all .5s ease 0s;-moz-transition:background-color all .5s ease 0s;-o-transition:background-color all .5s ease 0s;transition:background-color all .5s ease 0s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d}", ""]);
 
 // exports
 
