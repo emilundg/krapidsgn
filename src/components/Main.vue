@@ -227,7 +227,8 @@
 
     @media screen and (min-width: 1281px){
       .card {
-        padding-bottom: 30px;
+        height: auto !important;
+        padding: 60px;
         .card-title {
           margin: 10px;
         }
