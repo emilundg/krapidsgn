@@ -33,11 +33,11 @@
                   <swiper-slide>
                     <b-card title="Kontakt">
                       <img class="card-icon" style="width: 40px" src="https://cdn.rawgit.com/emilundg/29eb090e9af059fb4a6ae8d93026b5df/raw/0385f98e2dcc5e0946f977e9f7a6eba3f93f33db/contact.svg" />
-                      <div class="inputgroup">
+                      <div class="inputgroup card-content">
                         <label for="comment">Mail:</label>
                         <b-form-input type="text" autocomplete="off" v-model="email" placeholder="Skriv mail" required></b-form-input>
                       </div>
-                      <div class="inputgroup">
+                      <div class="inputgroup card-content">
                         <label for="comment">Hemsida:</label>
                         <b-form-input type="text" autocomplete="off" v-model="company" placeholder="Skriv URL" required></b-form-input>
                       </div>
@@ -57,7 +57,7 @@
                       </div>
                       <div slot="back">
                         <b-card class="flipCard" title="Hur det fungerar">
-                          <p class="card-text" style="margin-top: 25%;">
+                          <p class="card-text">
                             Efter hemsidan är uppsatt kan man antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting. Detta gör att man får full tillgång över hemsidan.
                           </p>
                           <button class="submit centered">Tillbaka</button>
@@ -66,7 +66,7 @@
                     </vue-flip>
                     <b-card v-else title="Hur det fungerar">
                       <img class="card-icon" src="https://cdn.rawgit.com/emilundg/b25797bc55a0d006bf56914a14d58fd4/raw/5dd9732b57d6a7cbbe2f816c5de4fe42bb0b62fd/settings.svg" />
-                      <p class="card-text">
+                      <p class="card-text card-content">
                         Skicka en förfrågan med en länk till den nuvarande hemsidan av företaget. Efter det kommer vi att skicka tillbaka en offert på hur lång tid det kommer ta och hur mycket det kommer kosta. <br><br> Efter hemsidan är uppsatt kan man
                         antingen få coaching-sessioner med en erfaren programmerare om man vill lära sig att ändra själv ELLER så tar vi hand om allting. Detta gör att man får full tillgång över hemsidan.
                       </p>
@@ -75,7 +75,7 @@
                   <swiper-slide>
                     <b-card title="Pris">
                       <img class="card-icon" src="https://github.com/emilundg/krapidsgn/blob/master/src/assets/get.png?raw=true" />
-                      <p class="card-text">
+                      <p class="card-text card-content">
                         <ul class="standard-list">
                           <li>
                             <img class="icon" src="https://cdn.rawgit.com/emilundg/88276eb491839eac61d57317c4b00da6/raw/2fe0ba26fff195d67cff1e88ea32e94f78eaaf85/check.svg" /> Gratis evaluering och snabb leverans.
@@ -200,6 +200,10 @@
   .standard-list {
     text-align: left;
     list-style: none;
+
+    li {
+      padding: 6px;
+    }
   }
 
   .icon {
@@ -220,6 +224,18 @@
       top: 25vh;
     }
     padding-right: 40px;
+
+    @media screen and (min-width: 1281px){
+      .card {
+        .card-title {
+          margin: 20px;
+        }
+        .card-icon {
+          margin: 30px;
+        }
+      }
+    }
+
     .card {
       min-height: 50vh;
       ul {
@@ -255,10 +271,13 @@
     }
   }
 
+  .card-content {
+    max-width: 450px !important;
+    margin: 0px auto;
+  }
+
   .inputgroup {
     text-align: left;
-    max-width: 375px !important;
-    margin: 0px auto;
     margin-bottom: 30px;
   }
 
